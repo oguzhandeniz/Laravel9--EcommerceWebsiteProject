@@ -262,6 +262,7 @@
                                         <p>Easy Polo Black Edition</p>
                                         <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
                                     </div>
+                                    <!--
                                     <div class="product-overlay">
                                         <div class="overlay-content">
                                             <h2>$56</h2>
@@ -269,6 +270,7 @@
                                             <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
                                         </div>
                                     </div>
+                                    -->
                                     <img src="{{asset("assets")}}/images/home/new.png" class="new" alt="" />
                                 </div>
                                 <div class="choose">
@@ -288,6 +290,7 @@
                                         <p>Easy Polo Black Edition</p>
                                         <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
                                     </div>
+                                     <!--
                                     <div class="product-overlay">
                                         <div class="overlay-content">
                                             <h2>$56</h2>
@@ -295,6 +298,7 @@
                                             <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
                                         </div>
                                     </div>
+                                    -->
                                     <img src="{{asset("assets")}}/images/home/sale.png" class="new" alt="" />
                                 </div>
                                 <div class="choose">
@@ -314,6 +318,7 @@
                                         <p>Easy Polo Black Edition</p>
                                         <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
                                     </div>
+                                    <!--
                                     <div class="product-overlay">
                                         <div class="overlay-content">
                                             <h2>$56</h2>
@@ -321,6 +326,7 @@
                                             <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
                                         </div>
                                     </div>
+                                    -->
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
