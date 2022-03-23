@@ -91,6 +91,7 @@
                             <li><a href="#">Order Status</a></li>
                             <li><a href="#">Change Location</a></li>
                             <li><a href="#">FAQ’s</a></li>
+                            <li><a href="#">Yardım Merkezi</a></li>
                         </ul>
                     </div>
                 </div>
