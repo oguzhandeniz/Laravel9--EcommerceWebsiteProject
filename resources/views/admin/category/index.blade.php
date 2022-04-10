@@ -36,7 +36,43 @@
                         </div>
                     </div>
                 </div>
-                <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
+
+                <div class="pd-20 card-box mb-30">
+                    <div class="clearfix mb-20">
+                        <div class="pull-left">
+                            <h4 class="text-blue h4">Category List</h4>
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Keywords</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                            <th scope="col">Show</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($data as $rs)
+                        <tr>
+                            <td>{{$rs->id}}</td>
+                            <td>{{$rs->title}}</td>
+                            <td>{{$rs->keywords}}</td>
+                            <td>{{$rs->description}}</td>
+                            <td>{{$rs->image}}</td>
+                            <td>{{$rs->status}}</td>
+                            <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-primary btn-sm">Edit</a> </td>
+                            <td><a href="/admin/category/delete/{{$rs->id}}" class="btn btn-danger btn-sm">Delete</a> </td>
+                            <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-success btn-sm">Show</a> </td>
+                        </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
