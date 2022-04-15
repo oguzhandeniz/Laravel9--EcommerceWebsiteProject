@@ -57,21 +57,14 @@
     </div>
 </div>
 
-@include("admin.header")
-
-
-
-@section('sidebar')
-    @include("admin.sidebar")
-
 
     <div class="container">
         @yield('content')
     </div>
 
     @include("admin.footer")
-    @section('footer')
-    @show
+@section('footer')
+@show
 
 
 </body>

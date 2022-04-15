@@ -69,30 +69,29 @@
                             <div class="form-group row">
                                 <label class="col-sm-12 col-md-2 col-form-label">Description</label>
                                 <div class="col-sm-12 col-md-10">
-                                    <input class="form-control" type="text" name="description" placeholder="Description">
+                                    <input class="form-control" type="text" name="description"
+                                           placeholder="Description">
                                 </div>
                             </div>
 
-
-                            <div class="form-group row">
-                                <label class="col-sm-12 col-md-2 col-form-label" for="exampleInputFile">Image</label>
-                                <div class="col-sm-12 col-md-10">
+                            <div class="form-group">
+                                <label for="exampleInputFile">Image</label>
+                                <div class="input-group">
                                     <div class="custom-file">
-                                         <input class="custom-file-input" type="file" name="image">
-                                        <label class="custom-file-label" for="exampleInputFile">Choose İmage File</label>
+                                        <input type="file" class="custom-file-input" name="image">
+                                        <label class="custom-file-label" for="exampleInputFile">Choose İmage
+                                            File</label>
                                     </div>
+
                                 </div>
                             </div>
 
-
-                            <div class="form-group row">
-                                <label class="col-sm-12 col-md-2 col-form-label">Status</label>
-                                <div class="col-sm-12 col-md-10">
-                                    <select class="form-control" name="status">
-                                        <option>True</option>
-                                        <option>False</option>
-                                    </select>
-                                </div>
+                            <div class="form-group">
+                                <label>Status</label>
+                                <select class="form-control" name="status">
+                                    <option>True</option>
+                                    <option>False</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
@@ -105,3 +104,4 @@
             </div>
         </div>
     </div>
+@endsection

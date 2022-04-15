@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminPanel\AdminCategoryController;
+use App\Http\Controllers\AdminPanel\AdminProductController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
-use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
+use App\Http\Controllers\AdminPanel\ImageController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Route;
 
 
 /*
@@ -32,20 +33,46 @@ Route::get('/welcome', function () {
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/show', [HomeController::class, 'show']);
 Route::get('/test', [HomeController::class, 'test']);
-
 Route::get('/', [HomeController::class, 'index'])->name('index');
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-//**************** ADMİN PANEL ROUTES******************
-Route::get('/admin', [AdminHomeController::class, 'index'])->name('admin');
-
 
 //**************** ADMİN PANEL ROUTES******************
-Route::get('/admin/category', [\App\Http\Controllers\CategoryController::class, 'index'])->name('admin_category');
-Route::get('/admin/category/create', [\App\Http\Controllers\CategoryController::class, 'create'])->name('admin_category_create');
-Route::post('/admin/category/store', [\App\Http\Controllers\CategoryController::class, 'store'])->name('admin_category_store');
-Route::get('/admin/category/edit/{id}', [\App\Http\Controllers\CategoryController::class, 'edit'])->name('admin_category_edit');
-Route::post('/admin/category/update/{id}', [\App\Http\Controllers\CategoryController::class, 'update'])->name('admin_category_update');
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [AdminHomeController::class, 'index'])->name('index');
+
+    //**************** ADMİN CATEGORY ROUTES******************
+    Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+        Route::get('/show/{id}', 'show')->name('show');
+    });
+
+
+    //**************** ADMİN PRODUCT ROUTES******************
+    Route::prefix('/product')->name('product.')->controller(AdminProductController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+        Route::get('/show/{id}', 'show')->name('show');
+    });
+
+
+    //**************** ADMİN PRODUCT IMAGE GALLERY ROUTES******************
+    Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function () {
+        Route::get('/{pid}', 'index')->name('index');
+        Route::get('/create/{pid}', 'create')->name('create');
+        Route::post('/store/{pid}', 'store')->name('store');
+        Route::get('/destroy/{pid}/{id}', 'destroy')->name('destroy');
+    });
+});
+

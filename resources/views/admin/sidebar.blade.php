@@ -88,7 +88,7 @@
 
 <div class="left-side-bar">
     <div class="brand-logo">
-        <a href="index.html">
+        <a href="/admin">
             <img src="{{asset("assets/adminAssets")}}/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
             <img src="{{asset("assets/adminAssets")}}/vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
         </a>
@@ -99,188 +99,94 @@
     <div class="menu-block customscroll">
         <div class="sidebar-menu">
             <ul id="accordion-menu">
+                <li>
+                    <a href="/admin" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-home"></span><span class="mtext">HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="dropdown-divider"></div>
+                </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+                        <span class="micon dw dw-user-12 "></span><span class="mtext">VENDORS</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="index.html">Dashboard style 1</a></li>
-                        <li><a href="index2.html">Dashboard style 2</a></li>
-                        <li><a href="index3.html">Dashboard style 3</a></li>
+                        <li><a href="index.html">New Vendors</a></li>
+                        <li><a href="index2.html">Vendor List</a></li>
+                        <li><a href="index3.html">Vendor Profile</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
+                        <span class="micon dw dw-user1 text-yellow "></span><span class="mtext">USERS</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="form-basic.html">Form Basic</a></li>
-                        <li><a href="advanced-components.html">Advanced Components</a></li>
-                        <li><a href="form-wizard.html">Form Wizard</a></li>
-                        <li><a href="html5-editor.html">HTML5 Editor</a></li>
-                        <li><a href="form-pickers.html">Form Pickers</a></li>
-                        <li><a href="image-cropper.html">Image Cropper</a></li>
-                        <li><a href="image-dropzone.html">Image Dropzone</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-library"></span><span class="mtext">Tables</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="basic-table.html">Basic Tables</a></li>
-                        <li><a href="datatable.html">DataTables</a></li>
+                        <li><a href="form-basic.html">New Users</a></li>
+                        <li><a href="advanced-components.html">User List</a></li>
+                        <li><a href="form-wizard.html">User Profile</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="calendar.html" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-calendar1"></span><span class="mtext">Calendar</span>
-                    </a>
+                    <div class="dropdown-divider"></div>
                 </li>
-                <li class="dropdown">
+                <li>
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-apartment"></span><span class="mtext"> UI Elements </span>
+                        <span class="micon dw dw-library text-green"></span><span class="mtext">CATEGORIES</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="ui-buttons.html">Buttons</a></li>
-                        <li><a href="ui-cards.html">Cards</a></li>
-                        <li><a href="ui-cards-hover.html">Cards Hover</a></li>
-                        <li><a href="ui-modals.html">Modals</a></li>
-                        <li><a href="ui-tabs.html">Tabs</a></li>
-                        <li><a href="ui-tooltip-popover.html">Tooltip &amp; Popover</a></li>
-                        <li><a href="ui-sweet-alert.html">Sweet Alert</a></li>
-                        <li><a href="ui-notification.html">Notification</a></li>
-                        <li><a href="ui-timeline.html">Timeline</a></li>
-                        <li><a href="ui-progressbar.html">Progressbar</a></li>
-                        <li><a href="ui-typography.html">Typography</a></li>
-                        <li><a href="ui-list-group.html">List group</a></li>
-                        <li><a href="ui-range-slider.html">Range slider</a></li>
-                        <li><a href="ui-carousel.html">Carousel</a></li>
+                        <li><a href="/admin/category">List Category </a></li>
+                        <li><a href="/admin/category/create">Add Category</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li>
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-paint-brush"></span><span class="mtext">Icons</span>
+                        <span class="micon dw dw-package"></span><span class="mtext">PRODUCTS</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="font-awesome.html">FontAwesome Icons</a></li>
-                        <li><a href="foundation.html">Foundation Icons</a></li>
-                        <li><a href="ionicons.html">Ionicons Icons</a></li>
-                        <li><a href="themify.html">Themify Icons</a></li>
-                        <li><a href="custom-icon.html">Custom Icons</a></li>
+                        <li><a href="/admin/product/create">Add Product</a></li>
+                        <li><a href="/admin/product">List Product</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li>
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-analytics-21"></span><span class="mtext">Charts</span>
+                        <span class="micon dw dw-shopping-cart2"></span><span class="mtext">ORDERS</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="highchart.html">Highchart</a></li>
-                        <li><a href="knob-chart.html">jQuery Knob</a></li>
-                        <li><a href="jvectormap.html">jvectormap</a></li>
-                        <li><a href="apexcharts.html">Apexcharts</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-right-arrow1"></span><span class="mtext">Additional Pages</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="video-player.html">Video Player</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="forgot-password.html">Forgot Password</a></li>
-                        <li><a href="reset-password.html">Reset Password</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-browser2"></span><span class="mtext">Error Pages</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="400.html">400</a></li>
-                        <li><a href="403.html">403</a></li>
-                        <li><a href="404.html">404</a></li>
-                        <li><a href="500.html">500</a></li>
-                        <li><a href="503.html">503</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">Extra Pages</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="blank.html">Blank</a></li>
-                        <li><a href="contact-directory.html">Contact Directory</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-detail.html">Blog Detail</a></li>
-                        <li><a href="product.html">Product</a></li>
-                        <li><a href="product-detail.html">Product Detail</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="pricing-table.html">Pricing Tables</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-list3"></span><span class="mtext">Multi Level Menu</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li class="dropdown">
-                            <a href="javascript:;" class="dropdown-toggle">
-                                <span class="micon fa fa-plug"></span><span class="mtext">Level 2</span>
-                            </a>
-                            <ul class="submenu child">
-                                <li><a href="javascript:;">Level 2</a></li>
-                                <li><a href="javascript:;">Level 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li><a href="javascript:;">Level 1</a></li>
-                        <li><a href="javascript:;">Level 1</a></li>
+                        <li><a href="introduction.html">New Order</a></li>
+                        <li><a href="getting-started.html">Order History</a></li>
+                        <li><a href="color-settings.html">Order Detail</a></li>
+                        <li><a href="third-party-plugins.html">Invoice</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="sitemap.html" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-diagram"></span><span class="mtext">Sitemap</span>
+                        <span class="micon dw dw-star"></span><span class="mtext">COMMENTS</span>
                     </a>
                 </li>
                 <li>
-                    <a href="chat.html" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-chat3"></span><span class="mtext">Chat</span>
+                    <a href="sitemap.html" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-message"></span><span class="mtext">MESSAGES</span>
                     </a>
                 </li>
                 <li>
-                    <a href="invoice.html" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-invoice"></span><span class="mtext">Invoice</span>
+                    <a href="sitemap.html" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-question"></span><span class="mtext">FAQ</span>
                     </a>
                 </li>
                 <li>
                     <div class="dropdown-divider"></div>
                 </li>
                 <li>
-                    <div class="sidebar-small-cap">Extra</div>
-                </li>
-                <li>
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-edit-2"></span><span class="mtext">Documentation</span>
+                    <a href="sitemap.html" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-settings text-danger"></span><span class="mtext">SETTINGS</span>
                     </a>
-                    <ul class="submenu">
-                        <li><a href="introduction.html">Introduction</a></li>
-                        <li><a href="getting-started.html">Getting Started</a></li>
-                        <li><a href="color-settings.html">Color Settings</a></li>
-                        <li><a href="third-party-plugins.html">Third Party Plugins</a></li>
-                    </ul>
                 </li>
                 <li>
                     <a href="https://github.com/oguzhandeniz/" target="_blank"
                        class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-paper-plane1"></span>
-                        <span class="mtext">Landing Page <img
+                        <span class="mtext">Co-Founder<img
                                 src="{{asset("assets/adminAssets")}}/vendors/images/coming-soon.png" alt="" width="25"></span>
                     </a>
                 </li>

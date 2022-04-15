@@ -1,7 +1,7 @@
 @extends('layouts.adminbase')
 
 
-@section('title','Edit Category: '.$data->title)
+@section('title','Edit Product: '.$data->title)
 
 
 @section('content')
@@ -12,12 +12,12 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>Edit Category: {{$data->title}}</h4>
+                                <h4>Edit Product: {{$data->title}}</h4>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Edit Category</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Edit Product</li>
                                 </ol>
                             </nav>
                         </div>
@@ -38,25 +38,22 @@
                 </div>
                 <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
 
-                    <form role="form" action="{{route('admin.category.update', ['id'=>$data->id])}}" method="post"
+                    <form role="form" action="{{route('admin.product.update', ['id'=>$data->id])}}" method="post"
                           enctype="multipart/form-data">
                         @csrf
-
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">Parent Category</label>
                             <div class="col-sm-12 col-md-10">
-                                <select class="form-control select2" name="parent_id">
-                                    <option value="0" selected="selected"> Main Category</option>
+                                <select class="form-control select2" name="category_id">
                                     @foreach($datalist as $rs)
                                         <option value="{{$rs->id}}"
-                                                @if($rs->id==$data->parent_id) selected="selected"@endif>{{\App\Http\Controllers\AdminPanel\AdminCategoryController::getParentsTree($rs,$rs->title)}}</option>
+                                                @if($rs->id==$data->category_id) selected="selected"@endif>{{\App\Http\Controllers\AdminPanel\AdminCategoryController::getParentsTree($rs,$rs->title)}}</option>
                                     @endforeach
                                 </select>
 
 
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">Title</label>
                             <div class="col-sm-12 col-md-10">
@@ -76,7 +73,39 @@
                                        value="{{$data->description}}">
                             </div>
                         </div>
-
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Price</label>
+                            <div class="col-sm-12 col-md-10">
+                                <input class="form-control" type="number" name=price" value="{{$data->price}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Quantity</label>
+                            <div class="col-sm-12 col-md-10">
+                                <input type="number" class="form-control" name="quantity" value="{{$data->quantity}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Minimum Quantity</label>
+                            <div class="col-sm-12 col-md-10">
+                                <input type="number" class="form-control" name="minquantity"
+                                       value="{{$data->minquantity}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Tax %</label>
+                            <div class="col-sm-12 col-md-10">
+                                <input type="number" class="form-control" name="tax" value="{{$data->tax}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Detail Info</label>
+                            <div class="col-sm-12 col-md-10">
+                                <textarea class="form-control" name="detail">
+                                    {{$data->detail}}
+                                </textarea>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label" for="exampleInputFile">Image</label>
                             <div class="col-sm-12 col-md-10">
@@ -86,7 +115,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">Status</label>
                             <div class="col-sm-12 col-md-10">
