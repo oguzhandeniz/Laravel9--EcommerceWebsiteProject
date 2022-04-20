@@ -69,7 +69,9 @@
                                 <th style="width: 30px">Image</th>
                                 <td>
                                     @if($data->image)
-                                        <div style="text-align:center"><img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}"   width="250" height="200" alt ></div>
+                                        <div style="text-align:center">
+                                            <img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}"
+                                                 width="250" height="200" alt ></div>
                                     @endif
                                 </td>
                             </tr>

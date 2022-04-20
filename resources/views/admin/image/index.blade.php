@@ -11,7 +11,8 @@
             <div class="min-height-200px">
                 <div class="page-header">
 
-                    <form  role="form" action="{{route('admin.image.store',['pid'=>$product->id])}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{route('admin.image.store',['pid'=>$product->id])}}" method="post"
+                          enctype="multipart/form-data">
                         @csrf
 
                         <div align="center"><h3>{{$product->title}}</h3></div>
@@ -19,7 +20,7 @@
                         <div class="form-group">
                             <label>Title</label>
 
-                                <input class="form-control" type="text" name="title" placeholder="Title">
+                            <input class="form-control" type="text" name="title" placeholder="Title">
 
                         </div>
 
@@ -39,7 +40,6 @@
                     </form>
 
                 </div>
-
                 <div class="pd-20 card-box mb-30">
                     <div class="clearfix mb-20">
                         <div class="pull-left">
@@ -61,16 +61,48 @@
                                 <td>{{$rs->id}}</td>
                                 <td>{{$rs->title}}</td>
                                 <td>
-                                        @if($rs->image)
-                                        <div style="text-align:center"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}"   width="100" height="100" alt ></div>
-                                        @endif
+                                    @if($rs->image)
+                                        <div style="text-align:center"><img
+                                                src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}"
+                                                width="100" height="100" alt></div>
+                                    @endif
                                 </td>
-                                <td><a href="{{route('admin.image.destroy', ['pid'=>$product->id,'id'=>$rs->id])}}" class="btn btn-danger btn-sm"
-                                       onclick="return confirm('Deleting! Are you sure?')">Delete</a> </td>
+                                <td><a href="{{route('admin.image.destroy', ['pid'=>$product->id,'id'=>$rs->id])}}"
+                                       class="btn btn-danger btn-sm"
+                                       onclick="return confirm('Deleting! Are you sure?')">Delete</a></td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
+                </div>
+
+                <div class="pd-20 card-box mb-30">
+                    <div class="product-wrap">
+                        <div class="product-list">
+                            <ul class="row">
+                                @foreach($images as $rs)
+                                    <li class="col-lg-4 col-md-6 col-sm-12">
+                                        <td>
+                                            {{$rs->title}}
+                                        </td>
+                                        <div class="product-box">
+
+                                            <div class="producct-img">
+
+                                                <td>
+                                                    @if($rs->image)
+                                                        <div style="text-align:center"><img
+                                                                src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}"
+                                                                width="300" height="300" alt></div>
+                                                    @endif
+                                                </td>
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
