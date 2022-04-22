@@ -22,7 +22,16 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset("assets/adminAssets")}}/vendors/styles/core.css">
     <link rel="stylesheet" type="text/css" href="{{asset("assets/adminAssets")}}/vendors/styles/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset("assets/adminAssets")}}/src/plugins/datatables/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset("assets/adminAssets")}}/src/plugins/datatables/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset("assets/adminAssets")}}/vendors/styles/style.css">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/autofill/2.3.9/css/autoFill.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->

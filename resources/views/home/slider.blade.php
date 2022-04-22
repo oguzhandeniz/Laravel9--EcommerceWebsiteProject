@@ -12,10 +12,10 @@
                     <div class="carousel-inner">
                         <div class="item active">
                             <div class="col-sm-6">
-                                <h1><span>FLEA MARKET</span></h1>
-                                <h2>Güvenli Alışveriş</h2>
+                                <h1><span>FizzBo</span></h1>
+                                <h2>Safe Shopping</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">SATIN AL</button>
+                                <button type="button" class="btn btn-default get">BUY</button>
                             </div>
                             <div class="col-sm-6">
                                 <img src="{{asset("assets")}}/images/home/girl1.jpg" class="girl img-responsive" alt="" />
@@ -24,10 +24,10 @@
                         </div>
                         <div class="item">
                             <div class="col-sm-6">
-                                <h1><span>FLEA MARKET</span></h1>
-                                <h2>100% Müşteri Hizmeti</h2>
+                                <h1><span>FizzBo</span></h1>
+                                <h2>100% Customer Satisfaction</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">SATIN AL</button>
+                                <button type="button" class="btn btn-default get">BUY</button>
                             </div>
                             <div class="col-sm-6">
                                 <img src="{{asset("assets")}}/images/home/girl2.jpg" class="girl img-responsive" alt="" />
@@ -37,10 +37,10 @@
 
                         <div class="item">
                             <div class="col-sm-6">
-                                <h1><span>FLEA MARKET</span></h1>
-                                <h2>Aradığınız Her Şey</h2>
+                                <h1><span>FizzBo</span></h1>
+                                <h2>Everything You're Looking For</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">SATIN AL</button>
+                                <button type="button" class="btn btn-default get">BUY</button>
                             </div>
                             <div class="col-sm-6">
                                 <img src="{{asset("assets")}}/images/home/girl3.jpg" class="girl img-responsive" alt="" />

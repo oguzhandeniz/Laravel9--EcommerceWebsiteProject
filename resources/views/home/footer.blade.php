@@ -4,8 +4,10 @@
             <div class="row">
                 <div class="col-sm-13">
                     <div class="companyinfo">
-                        <h1><span>FLEA MARKET</span></h1>
-                        <p>xxxxxxx.com'da yer alan kullanıcıların oluşturduğu tüm içerik, görüş ve bilgilerin doğruluğu, eksiksiz ve değişmez olduğu, yayınlanması ile ilgili yasal yükümlülükler içeriği oluşturan kullanıcıya aittir. Bu içeriğin, görüş ve bilgilerin yanlışlık, eksiklik veya yasalarla düzenlenmiş kurallara aykırılığından xxxxxxxx.com hiçbir şekilde sorumlu değildir.</p>
+                        <h1><span>FizzBo</span></h1>
+                        <p>All content, opinions and information created by the users on FizzBo.com are correct,
+                            complete and unchangeable, and the legal obligations regarding the publication belong to the user who created the content.
+                            FizzBo.com is in no way responsible for the inaccuracies, omissions or violations of these content, opinions and information.</p>
                     </div>
                 </div>
                 <div class="col-sm-7">

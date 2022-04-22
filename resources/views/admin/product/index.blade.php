@@ -43,7 +43,7 @@
                             <h4 class="text-blue h4">Product List</h4>
                         </div>
                     </div>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-striped">
                         <thead>
                         <tr>
                             <th scope="col">Id</th>

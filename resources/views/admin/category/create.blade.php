@@ -69,7 +69,8 @@
                             <div class="form-group row">
                                 <label class="col-sm-12 col-md-2 col-form-label">Description</label>
                                 <div class="col-sm-12 col-md-10">
-                                    <input class="form-control" type="text" name="description" placeholder="Description">
+                                    <input class="form-control" type="text" name="description"
+                                           placeholder="Description">
                                 </div>
                             </div>
 
@@ -78,8 +79,9 @@
                                 <label class="col-sm-12 col-md-2 col-form-label" for="exampleInputFile">Image</label>
                                 <div class="col-sm-12 col-md-10">
                                     <div class="custom-file">
-                                         <input class="custom-file-input" type="file" name="image">
-                                        <label class="custom-file-label" for="exampleInputFile">Choose İmage File</label>
+                                        <input class="custom-file-input" type="file" name="image">
+                                        <label class="custom-file-label" for="exampleInputFile">Choose İmage
+                                            File</label>
                                     </div>
                                 </div>
                             </div>
@@ -98,6 +100,7 @@
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">Save</button>
                             </div>
+
                         </div>
                     </form>
 
@@ -105,3 +108,5 @@
             </div>
         </div>
     </div>
+
+

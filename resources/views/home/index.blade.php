@@ -1,6 +1,6 @@
 @extends('layouts.homebase')
 
-@section('title','SecondHand Shopping Website')
+@section('title','FizzBo.com')
 
 
 @section('slider')
@@ -18,29 +18,29 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="left-sidebar">
-                        <h2>KATEGORİ</h2>
+                        <h2>CATEGORY</h2>
                         <div class="panel-group category-products" id="accordian"><!--category-productsr-->
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
                                             <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            ELEKTRONİK
+                                            ELECTRONIC
                                         </a>
                                     </h4>
                                 </div>
                                 <div id="sportswear" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul>
-                                            <li><a href="#">Bilgisayar </a></li>
-                                            <li><a href="#">Cep Telefonu  & Ev Telefonu</a></li>
+                                            <li><a href="#">Computer </a></li>
+                                            <li><a href="#">Mobil Phone</a></li>
                                             <li><a href="#">TV</a></li>
-                                            <li><a href="#">Oyun Konsolları</a></li>
-                                            <li><a href="#">Fotoğraf & Kamera </a></li>
-                                            <li><a href="#">Ev Elektroniği</a></li>
-                                            <li><a href="#">Elektrikli Ev Aletleri </a></li>
-                                            <li><a href="#">Beyaz Eşya</a></li>
-                                            <li><a href="#">Elektronik Parçalar</a></li>
+                                            <li><a href="#">Game Consoles</a></li>
+                                            <li><a href="#">Photography and Camera </a></li>
+                                            <li><a href="#">Construction Materials</a></li>
+                                            <li><a href="#">Electrical Appliances</a></li>
+                                            <li><a href="#">Household Appliances</a></li>
+                                            <li><a href="#">Electronic Parts</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordian" href="#mens">
                                             <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            OTOMOBİL
+                                            CARS
                                         </a>
                                     </h4>
                                 </div>
@@ -86,76 +86,75 @@
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordian" href="#womens">
                                             <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            EMLAK
+                                            REAL ESTATE
                                         </a>
                                     </h4>
                                 </div>
                                 <div id="womens" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul>
-                                            <li><a href="#">Konut</a></li>
-                                            <li><a href="#">İş Yeri</a></li>
-                                            <li><a href="#">Arsa</a></li>
-                                            <li><a href="#">Tesis</a></li>
-                                            <li><a href="#">Kiralık</a></li>
+                                            <li><a href="#">House</a></li>
+                                            <li><a href="#">Workplace</a></li>
+                                            <li><a href="#">Land</a></li>
+                                            <li><a href="#">Facility</a></li>
+                                            <li><a href="#">For Rent</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">ÇOCUK ÜRÜNLERİ</a></h4>
+                                    <h4 class="panel-title"><a href="#">CHILDREN'S PRODUCTS</a></h4>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">MODA</a></h4>
+                                    <h4 class="panel-title"><a href="#">FASHION</a></h4>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">EV EŞYASI</a></h4>
+                                    <h4 class="panel-title"><a href="#">FURNITURE</a></h4>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">İÇ TASARIM</a></h4>
+                                    <h4 class="panel-title"><a href="#">INTERIOR DESIGN</a></h4>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">GİYİM</a></h4>
+                                    <h4 class="panel-title"><a href="#">CLOTHES</a></h4>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">ÇANTA</a></h4>
+                                    <h4 class="panel-title"><a href="#">ACCESSORY</a></h4>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">AYAKKABI</a></h4>
+                                    <h4 class="panel-title"><a href="#">SHOE</a></h4>
                                 </div>
                             </div>
                         </div><!--/category-products-->
 
                         <div class="brands_products"><!--brands_products-->
-                            <h2>SON EKLENENLER</h2>
+                            <h2>LAST ADDED</h2>
                             <div class="brands-name">
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#"> <span class="pull-right">(50)</span>OTOMOBİL</a></li>
-                                    <li><a href="#"> <span class="pull-right">(56)</span>CEP TELEFONU</a></li>
-                                    <li><a href="#"> <span class="pull-right">(27)</span>EMLAK</a></li>
+                                    <li><a href="#"> <span class="pull-right">(50)</span>CAR</a></li>
+                                    <li><a href="#"> <span class="pull-right">(56)</span>MOBIL PHONE</a></li>
+                                    <li><a href="#"> <span class="pull-right">(27)</span>REAL ESTATE</a></li>
                                     <li><a href="#"> <span class="pull-right">(32)</span>TABLET</a></li>
-                                    <li><a href="#"> <span class="pull-right">(5)</span>KİRALIK DAİRE</a></li>
-                                    <li><a href="#"> <span class="pull-right">(9)</span>ARSA</a></li>
-                                    <li><a href="#"> <span class="pull-right">(4)</span>AYAKKABI</a></li>
+                                    <li><a href="#"> <span class="pull-right">(5)</span>APARTMENT FOR RENT</a></li>
+                                    <li><a href="#"> <span class="pull-right">(9)</span>LAND</a></li>
                                 </ul>
                             </div>
                         </div><!--/brands_products-->
 
                         <div class="price-range"><!--price-range-->
-                            <h2>Fiyat Aralığı</h2>
+                            <h2>Price Range</h2>
                             <div class="well text-center">
                                 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="100000" data-slider-step="5" data-slider-value="[35000,70000]" id="sl2" ><br />
                                 <b class="pull-left">0 ₺</b> <b class="pull-right">100000 ₺</b>
@@ -171,7 +170,7 @@
 
                 <div class="col-sm-9 padding-right">
                     <div class="features_items"><!--features_items-->
-                        <h2 class="title text-center">VİTRİN</h2>
+                        <h2 class="title text-center">SHOWCASE</h2>
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
@@ -179,7 +178,7 @@
                                         <img src="{{asset("assets")}}/images/home/product1.jpg" alt="" />
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition1</p>
-                                        <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                        <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                     </div>
                                     <!--
                                     <div class="product-overlay">
@@ -193,8 +192,8 @@
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Favorilere Ekle</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Karşılaştır</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to Favorites</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Compare</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -206,7 +205,7 @@
                                         <img src="{{asset("assets")}}/images/home/product2.jpg" alt="" />
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition2</p>
-                                        <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                        <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                     </div>
                                     <!--
                                     <div class="product-overlay">
@@ -220,8 +219,8 @@
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Favorilere Ekle</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Karşılaştır</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to Favorites</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Compare</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -233,7 +232,7 @@
                                         <img src="{{asset("assets")}}/images/home/product3.jpg" alt="" />
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition3</p>
-                                        <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                        <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                     </div>
                                     <!--
                                     <div class="product-overlay">
@@ -247,8 +246,8 @@
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Favorilere Ekle</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Karşılaştır</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to Favorites</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Compare</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -260,14 +259,14 @@
                                         <img src="{{asset("assets")}}/images/home/product4.jpg" alt="" />
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition</p>
-                                        <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                        <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                     </div>
                                     <!--
                                     <div class="product-overlay">
                                         <div class="overlay-content">
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                            <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                         </div>
                                     </div>
                                     -->
@@ -275,8 +274,8 @@
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Favorilere Ekle</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Karşılaştır</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to Favorites</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Compare</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -288,14 +287,14 @@
                                         <img src="{{asset("assets")}}/images/home/product5.jpg" alt="" />
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition</p>
-                                        <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                        <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                     </div>
                                      <!--
                                     <div class="product-overlay">
                                         <div class="overlay-content">
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                            <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                         </div>
                                     </div>
                                     -->
@@ -303,8 +302,8 @@
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Favorilere Ekle</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Karşılaştır</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to Favorites</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Compare</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -316,22 +315,22 @@
                                         <img src="{{asset("assets")}}/images/home/product6.jpg" alt="" />
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition</p>
-                                        <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                        <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                     </div>
                                     <!--
                                     <div class="product-overlay">
                                         <div class="overlay-content">
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                            <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                         </div>
                                     </div>
                                     -->
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Favorilere Ekle</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Karşılaştır</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to Favorites</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>Compare</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -340,16 +339,15 @@
                     </div><!--features_items-->
 
                     <div class="category-tab"><!--category-tab-->
-                        <h2 class="title text-center">EN ÇOK BEĞENİLENLER</h2>
+                        <h2 class="title text-center">MOST LIKED</h2>
                         <div class="col-sm-12">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#tshirt" data-toggle="tab">OTOMOBİL</a></li>
-                                <li><a href="#blazers" data-toggle="tab">ELEKTRONİK</a></li>
-                                <li><a href="#sunglass" data-toggle="tab">EMLAK</a></li>
-                                <li><a href="#kids" data-toggle="tab">MODA</a></li>
-                                <li><a href="#poloshirt" data-toggle="tab">GİYİM</a></li>
-                                <li><a href="#poloshirt" data-toggle="tab">EV EŞYASI</a></li>
-                                <li><a href="#poloshirt" data-toggle="tab">ARSA</a></li>
+                                <li class="active"><a href="#tshirt" data-toggle="tab">CARS</a></li>
+                                <li><a href="#blazers" data-toggle="tab">ELECTRONIC</a></li>
+                                <li><a href="#sunglass" data-toggle="tab">REAL ESTATE</a></li>
+                                <li><a href="#kids" data-toggle="tab">FASHION</a></li>
+                                <li><a href="#poloshirt" data-toggle="tab">CLOTHES</a></li>
+                                <li><a href="#poloshirt" data-toggle="tab">FURNITURE</a></li>
 
                             </ul>
                         </div>
@@ -362,7 +360,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery1.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -375,7 +373,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery2.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -388,7 +386,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery3.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -401,7 +399,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery4.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -417,7 +415,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery4.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -430,7 +428,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery3.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -443,7 +441,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery2.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -456,7 +454,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery1.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -472,7 +470,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery3.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -485,7 +483,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery4.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -498,7 +496,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery1.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -511,7 +509,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery2.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -527,7 +525,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery1.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -540,7 +538,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery2.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -553,7 +551,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery3.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -566,7 +564,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery4.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -582,7 +580,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery2.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -595,7 +593,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery4.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -608,7 +606,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery3.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -621,7 +619,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery1.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                             </div>
 
                                         </div>
@@ -632,7 +630,7 @@
                     </div><!--/category-tab-->
 
                     <div class="recommended_items"><!--recommended_items-->
-                        <h2 class="title text-center">SON EKLENEN ÜRÜNLER</h2>
+                        <h2 class="title text-center">LAST ADDED PRODUCTS</h2>
 
                         <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
@@ -644,7 +642,7 @@
                                                     <img src="{{asset("assets")}}/images/home/recommend1.jpg" alt="" />
                                                     <h2>$56</h2>
                                                     <p>Easy Polo Black Edition</p>
-                                                    <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                    <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                                 </div>
 
                                             </div>
@@ -657,7 +655,7 @@
                                                     <img src="{{asset("assets")}}/images/home/recommend2.jpg" alt="" />
                                                     <h2>$56</h2>
                                                     <p>Easy Polo Black Edition</p>
-                                                    <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                    <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                                 </div>
 
                                             </div>
@@ -670,7 +668,7 @@
                                                     <img src="{{asset("assets")}}/images/home/recommend3.jpg" alt="" />
                                                     <h2>$56</h2>
                                                     <p>Easy Polo Black Edition</p>
-                                                    <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                    <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                                 </div>
 
                                             </div>
@@ -685,7 +683,7 @@
                                                     <img src="{{asset("assets")}}/images/home/recommend1.jpg" alt="" />
                                                     <h2>$56</h2>
                                                     <p>Easy Polo Black Edition</p>
-                                                    <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                    <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                                 </div>
 
                                             </div>
@@ -698,7 +696,7 @@
                                                     <img src="{{asset("assets")}}/images/home/recommend2.jpg" alt="" />
                                                     <h2>$56</h2>
                                                     <p>Easy Polo Black Edition</p>
-                                                    <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                    <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                                 </div>
 
                                             </div>
@@ -711,7 +709,7 @@
                                                     <img src="{{asset("assets")}}/images/home/recommend3.jpg" alt="" />
                                                     <h2>$56</h2>
                                                     <p>Easy Polo Black Edition</p>
-                                                    <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>Görüntüle</a>
+                                                    <a href="product-details.html" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                                 </div>
 
                                             </div>

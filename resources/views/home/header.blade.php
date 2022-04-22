@@ -30,32 +30,33 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="{{asset("assets")}}/images/home/logo.png" alt="" /></a>
+                        <a href="index.html"><img src="{{asset("assets")}}/images/home/logo.png"  width="139" height="65" alt="" /></a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                ÜLKE
+                                COUNTRY
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Türkiye</a></li>
-                                <li><a href="#">Europa</a></li>
+
                                 <li><a href="#">USA</a></li>
                                 <li><a href="#">Canada</a></li>
                                 <li><a href="#">UK</a></li>
+                                <li><a href="#">Turkey</a></li>
+                                <li><a href="#">Europa</a></li>
                             </ul>
                         </div>
 
                         <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                TL
+                                Dollar
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="#">TL</a></li>
-                                <li><a href="#">Dolar</a></li>
+                                <li><a href="#">Dollar</a></li>
                                 <li><a href="#">Euro</a></li>
+                                <li><a href="#">TL</a></li>
                                 <li><a href="#">Pound</a></li>
                             </ul>
                         </div>
@@ -64,11 +65,11 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-user"></i>Hesap</a></li>
-                            <li><a href="#"><i class="fa fa-star"></i>Favoriler</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i>Kontrol Et</a></li>
-                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Sepet</a></li>
-                            <li><a href="login.html"><i class="fa fa-lock"></i>Giriş Yap</a></li>
+                            <li><a href="#"><i class="fa fa-user"></i>Account</a></li>
+                            <li><a href="#"><i class="fa fa-star"></i>Favorites</a></li>
+                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i>Check</a></li>
+                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Cart</a></li>
+                            <li><a href="login.html"><i class="fa fa-lock"></i>Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -90,30 +91,32 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="index.html" class="active">Anasayfa</a></li>
-                            <li class="dropdown"><a href="#">Alışveriş<i class="fa fa-angle-down"></i></a>
+                            <li><a href="index.html" class="active">Home</a></li>
+                            <li class="dropdown">
+                                <a href="#">Shopping<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="shop.html">Ürünler</a></li>
-                                    <li><a href="product-details.html">Ürün Detayı</a></li>
-                                    <li><a href="checkout.html">Kontrol Et</a></li>
-                                    <li><a href="cart.html">Sepet</a></li>
-                                    <li><a href="login.html">Giriş Yap</a></li>
+                                    <li><a href="shop.html">Products</a></li>
+                                    <li><a href="product-details.html">Product Detail</a></li>
+                                    <li><a href="checkout.html">Check</a></li>
+                                    <li><a href="cart.html">Cart</a></li>
+                                    <li><a href="login.html">Login</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">Hizmetlerimiz<i class="fa fa-angle-down"></i></a>
+                            <li class="dropdown">
+                                <a href="#">Services<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="blog.html">Blog Listesi</a></li>
-                                    <li><a href="blog-single.html">Blog Açıklaması</a></li>
+                                    <li><a href="blog.html">Blog List</a></li>
+                                    <li><a href="blog-single.html">Blog Description</a></li>
                                 </ul>
                             </li>
                             <li><a href="404.html">404</a></li>
-                            <li><a href="contact-us.html">İletişim</a></li>
+                            <li><a href="contact-us.html">Communication</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="search_box pull-right">
-                        <input type="text" placeholder="Arama"/>
+                        <input type="text" placeholder="Search"/>
                     </div>
                 </div>
             </div>

@@ -34,5 +34,40 @@
 <script src="{{asset("assets/adminAssets")}}/src/plugins/fancybox/dist/jquery.fancybox.js"></script>
 <!-- Slick Slider js -->
 <script src="{{asset("assets/adminAssets")}}/src/plugins/slick/slick.min.js"></script>
+
+
+
+<script src="{{asset("assets/adminAssets")}}/src/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+<script src="{{asset("assets/adminAssets")}}/src/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="{{asset("assets/adminAssets")}}/vendors/scripts/dashboard2.js"></script>
+<script src="{{asset("assets/adminAssets")}}/src/plugins/jQuery-Knob-master/jquery.knob.min.js"></script>
+
+
+
+<script src="{{asset("assets/adminAssets")}}/src/plugins/highcharts-6.0.7/code/highcharts.js"></script>
+<script src="{{asset("assets/adminAssets")}}/https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="{{asset("assets/adminAssets")}}/src/plugins/highcharts-6.0.7/code/highcharts-more.js"></script>
+<script src="{{asset("assets/adminAssets")}}/vendors/scripts/highchart-setting.js"></script>
+
+<script src="{{asset("assets/adminAssets")}}/src/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+
+<script src="vendors/scripts/dashboard.js"></script>
+
+<!--PolluxUI Scripts-->
+<script src="{{asset("assets/adminAssets")}}/vendors/chart.js/Chart.min.js"></script>
+<script src="{{asset("assets/adminAssets")}}/vendors/chart.js/chart.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 @yield('foot')

@@ -101,21 +101,23 @@
                                 <th style="width: 30px">Image</th>
                                 <td>
                                     @if($data->image)
-                                        <div style="text-align:center"><img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}"   width="250" height="200" alt ></div>
+                                        <div style="text-align:center"><img
+                                                src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}"
+                                                width="600" height="600" alt></div>
                                     @endif
                                 </td>
                             </tr>
 
                         </table>
                         <div class="pull-right">
-                            <a class="btn btn-secondary" href="{{route('admin.product.edit', ['id'=>$data->id])}}" role="button" style="width: 100px">Edit</a>
+                            <a class="btn btn-secondary" href="{{route('admin.product.edit', ['id'=>$data->id])}}"
+                               role="button" style="width: 100px">Edit</a>
                             <a class="btn btn-danger" onclick="return confirm('Deleting! Are you sure?')"
-                               href="{{route('admin.product.destroy', ['id'=>$data->id])}}" role="button" style="width: 100px" >Delete</a>
+                               href="{{route('admin.product.destroy', ['id'=>$data->id])}}" role="button"
+                               style="width: 100px">Delete</a>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
