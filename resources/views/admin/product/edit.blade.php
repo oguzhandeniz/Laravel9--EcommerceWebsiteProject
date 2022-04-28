@@ -3,6 +3,9 @@
 
 @section('title','Edit Product: '.$data->title)
 
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 
 @section('content')
     <div class="main-container">
@@ -101,9 +104,15 @@
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">Detail Info</label>
                             <div class="col-sm-12 col-md-10">
-                                <textarea class="form-control" name="detail">
+                                <textarea class="form-control" id="detail" name="detail">
                                     {{$data->detail}}
                                 </textarea>
+                                <script>
+                                    ClassicEditor
+                                        .create(document.querySelector('#detail'))
+                                        .then(editor=>{console.log(editor);})
+                                        .catch(error=>{console.error(error);})
+                                </script>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -135,3 +144,7 @@
             </div>
         </div>
     </div>
+@endsection
+@section('foot')
+    <script src="https://cdn.jsdelivr.net/npm/summernote"
+@endsection

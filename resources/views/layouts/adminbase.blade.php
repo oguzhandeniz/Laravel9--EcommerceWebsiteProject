@@ -33,7 +33,6 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
 
 
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
     <script>
@@ -47,6 +46,7 @@
 
         gtag('config', 'UA-119386393-1');
     </script>
+
     @yield('head')
 </head>
 
@@ -74,13 +74,13 @@
     @include("admin.sidebar")
 
 
-    <div class="container">
+
         @yield('content')
-    </div>
+
 
     @include("admin.footer")
     @section('footer')
     @show
 
-
 </body>
+</html>
