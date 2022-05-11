@@ -40,7 +40,8 @@
                                 <h2>{{$rs->title}}</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">BUY</button>
+
+                                <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default get"> BUY </a>
                             </div>
                             <div class="col-sm-6">
                                 <img src="{{Storage::url($rs->image)}}" class="girl img-responsive"

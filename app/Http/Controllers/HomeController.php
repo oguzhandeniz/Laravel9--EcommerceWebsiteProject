@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $page = 'home';
         $sliderdata = Product::inRandomOrder()->limit(1)->get();
-        $productlist1 = Product::limit(6)->get();
+        $productlist1 = Product::inRandomOrder()->limit(6)->get();
         return view('home.index', [
             'page' => $page,
             'sliderdata' => $sliderdata,

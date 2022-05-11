@@ -178,15 +178,15 @@
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
                                     <div class="item active">
-                                       <img src="{{Storage::url($data->image)}}" style="width: 84px; height: 84px" alt="">
+                                        <a href=""><img src="{{Storage::url($data->image)}}" style="width: 84px; height: 84px" alt=""></a>
                                         @foreach($images as $rs)
-                                            <img src="{{Storage::url($rs->image)}}" style="width: 84px; height: 84px" alt="">
+                                            <a href=""> <img src="{{Storage::url($rs->image)}}" style="width: 84px; height: 84px" alt=""></a>
                                         @endforeach
                                     </div>
                                     <div class="item">
-                                        <img src="{{Storage::url($data->image)}}" style="width: 84px; height: 84px" alt="">
+                                        <a href=""><img src="{{Storage::url($data->image)}}" style="width: 84px; height: 84px" alt=""></a>
                                         @foreach($images as $rs)
-                                            <img src="{{Storage::url($rs->image)}}" style="width: 84px; height: 84px" alt="">
+                                                <a href=""><img src="{{Storage::url($rs->image)}}" style="width: 84px; height: 84px" alt=""></a>
                                         @endforeach
                                     </div>
                                 </div>
@@ -236,7 +236,7 @@
                         </div>
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="details">
-                               <p>{!! $data->detail !!}</p>
+                                <p>{!! $data->detail !!}</p>
                             </div>
 
                             <div class="tab-pane fade" id="companyprofile">
