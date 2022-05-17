@@ -178,7 +178,7 @@
                     <div class="dropdown-divider"></div>
                 </li>
                 <li>
-                    <a href="sitemap.html" class="dropdown-toggle no-arrow">
+                    <a href="/admin/setting" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-settings text-danger"></span><span class="mtext">SETTINGS</span>
                     </a>
                 </li>

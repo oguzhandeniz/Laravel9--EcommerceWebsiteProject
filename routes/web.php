@@ -35,6 +35,9 @@ Route::get('/show', [HomeController::class, 'show']);
 Route::get('/test', [HomeController::class, 'test']);
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/product/{id}',[HomeController::class,'product'])->name('product');
+Route::get('/categoryproducts/{id}/{slug}',[HomeController::class,'categoryproducts'])->name('categoryproducts');
+
+//*******************************************************************************
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -44,6 +47,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //**************** ADMİN PANEL ROUTES******************
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
+
+    //**************** GENERAL ROUTES******************
+    Route::get('/setting',[AdminHomeController::class,'setting'])->name('setting');
+    Route::post('/setting',[AdminHomeController::class,'settingUpdate'])->name('setting.update');
+
 
     //**************** ADMİN CATEGORY ROUTES******************
     Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {

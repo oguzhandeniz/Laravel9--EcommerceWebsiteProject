@@ -15,128 +15,37 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="left-sidebar">
+                        @php
+                            $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
+                        @endphp
                         <h2>CATEGORY</h2>
-                        <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            ELECTRONIC
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="sportswear" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul>
-                                            <li><a href="#">Computer </a></li>
-                                            <li><a href="#">Mobil Phone</a></li>
-                                            <li><a href="#">TV</a></li>
-                                            <li><a href="#">Game Consoles</a></li>
-                                            <li><a href="#">Photography and Camera </a></li>
-                                            <li><a href="#">Construction Materials</a></li>
-                                            <li><a href="#">Electrical Appliances</a></li>
-                                            <li><a href="#">Household Appliances</a></li>
-                                            <li><a href="#">Electronic Parts</a></li>
-                                        </ul>
+                        <div class="panel-group category-products" id="accordian">
+                            <!--category-productsr-->
+                            @foreach($mainCategories as $rs)
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordian" href="#{{$rs->title}}">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                {{$rs->title}}
+                                            </a>
+                                        </h4>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordian" href="#mens">
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            CARS
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="mens" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul>
-                                            <li><a href="#">Alfa Romeo</a></li>
-                                            <li><a href="#">Audi</a></li>
-                                            <li><a href="#">BMW</a></li>
-                                            <li><a href="#">Chevrolet</a></li>
-                                            <li><a href="#">Ferrari</a></li>
-                                            <li><a href="#">Fiat</a></li>
-                                            <li><a href="#">Ford</a></li>
-                                            <li><a href="#">Honda</a></li>
-                                            <li><a href="#">Kia</a></li>
-                                            <li><a href="#">Maserati</a></li>
-                                            <li><a href="#">Mazda</a></li>
-                                            <li><a href="#">Mercedes-Benz</a></li>
-                                            <li><a href="#">Opel</a></li>
-                                            <li><a href="#">Renault</a></li>
-                                            <li><a href="#">Skoda</a></li>
-                                            <li><a href="#">Tesla</a></li>
-                                            <li><a href="#">Toyota</a></li>
-                                            <li><a href="#">Volkswagen</a></li>
-                                            <li><a href="#">Volvo</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                                    <div id="{{$rs->title}}" class="panel-collapse collapse">
+                                        <div class="panel-body">
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordian" href="#womens">
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            REAL ESTATE
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="womens" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul>
-                                            <li><a href="#">House</a></li>
-                                            <li><a href="#">Workplace</a></li>
-                                            <li><a href="#">Land</a></li>
-                                            <li><a href="#">Facility</a></li>
-                                            <li><a href="#">For Rent</a></li>
-                                        </ul>
+                                            @if(count($rs->children))
+                                                @include('home.categorytree',['children'=>$rs->children])
+                                            @endif
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">CHILDREN'S PRODUCTS</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">FASHION</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">FURNITURE</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">INTERIOR DESIGN</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">CLOTHES</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">ACCESSORY</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">SHOE</a></h4>
-                                </div>
-                            </div>
+                            @endforeach
                         </div><!--/category-products-->
 
-                        <div class="brands_products"><!--brands_products-->
+                        <div class="brands_products">
+                            <!--brands_products-->
                             <h2>LAST ADDED</h2>
                             <div class="brands-name">
                                 <ul class="nav nav-pills nav-stacked">
@@ -176,6 +85,19 @@
                             <div id="similar-product" class="carousel slide" data-ride="carousel">
 
                                 <!-- Wrapper for slides -->
+                                <div class="carousel-inner border">
+                                    <div class="item active">
+                                        <a href=""><img src="{{Storage::url($data->image)}}"  style="width:402px; height:402px;" alt="Image"></a>
+                                    </div>
+                                    @foreach($images as $rs)
+                                    <div class="item">
+                                        <a href=""><img src="{{Storage::url($rs->image)}}"  style="width:402px; height:402px;" alt="Image"></a>
+                                    </div>
+                                    @endforeach
+                                </div>
+
+
+                                <!--
                                 <div class="carousel-inner">
                                     <div class="item active">
                                         <a href=""><img src="{{Storage::url($data->image)}}" style="width: 84px; height: 84px" alt=""></a>
@@ -190,6 +112,7 @@
                                         @endforeach
                                     </div>
                                 </div>
+                                -->
 
                                 <!-- Controls -->
                                 <a class="left item-control" href="#similar-product" data-slide="prev">
