@@ -19,7 +19,9 @@ class AdminProductController extends Controller
     public function index()
     {
         $data=Product::all();
-        return view('admin.product.index',['data'=>$data]);
+        return view('admin.product.index',[
+            'data'=>$data
+        ]);
     }
 
     /**
@@ -30,7 +32,9 @@ class AdminProductController extends Controller
     public function create()
     {
         $data=Category::all();
-        return view('admin.product.create',['data'=>$data]);
+        return view('admin.product.create',[
+            'data'=>$data
+        ]);
 
     }
 
@@ -71,7 +75,9 @@ class AdminProductController extends Controller
     public function show(Product $product,$id)
     {
         $data=Product::find($id);
-        return view('admin.product.show',['data'=>$data]);
+        return view('admin.product.show',[
+            'data'=>$data
+        ]);
     }
 
     /**
@@ -84,7 +90,9 @@ class AdminProductController extends Controller
     {
         $data=Product::find($id);
         $datalist=Category::all();
-        return view('admin.product.edit',['data'=>$data,'datalist'=>$datalist]);
+        return view('admin.product.edit',[
+            'data'=>$data,'datalist'=>$datalist
+        ]);
     }
 
     /**

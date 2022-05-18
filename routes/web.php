@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminPanel\AdminCategoryController;
 use App\Http\Controllers\AdminPanel\AdminProductController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\ImageController;
+use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,7 +34,14 @@ Route::get('/welcome', function () {
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/show', [HomeController::class, 'show']);
 Route::get('/test', [HomeController::class, 'test']);
+
+//**************** HOME PAGE ROUTES******************
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/references', [HomeController::class, 'references'])->name('references');
+Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
+
 Route::get('/product/{id}',[HomeController::class,'product'])->name('product');
 Route::get('/categoryproducts/{id}/{slug}',[HomeController::class,'categoryproducts'])->name('categoryproducts');
 
@@ -83,6 +91,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/create/{pid}', 'create')->name('create');
         Route::post('/store/{pid}', 'store')->name('store');
         Route::get('/destroy/{pid}/{id}', 'destroy')->name('destroy');
+    });
+
+    //**************** ADMİN MESSAGE ROUTES******************
+    Route::prefix('/message')->name('message.')->controller(MessageController::class)->group(function (){
+        Route::get('/','index')->name('index');
+        Route::get('/show/{id}','show')->name('show');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
     });
 });
 

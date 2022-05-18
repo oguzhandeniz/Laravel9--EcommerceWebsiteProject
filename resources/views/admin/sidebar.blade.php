@@ -165,7 +165,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="sitemap.html" class="dropdown-toggle no-arrow">
+                    <a href="{{route('admin.message.index')}}" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-message"></span><span class="mtext">MESSAGES</span>
                     </a>
                 </li>

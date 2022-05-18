@@ -96,7 +96,7 @@
                                         <div class="productinfo text-center">
                                             <img src="{{Storage::url($rs->image)}}" style="width:268px; height:360px;"
                                                  alt=""/>
-                                            <h2>{{$rs->price}}</h2>
+                                            <h2>${{$rs->price}}</h2>
                                             <p>{{$rs->title}}</p>
                                             <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default add-to-cart">
                                                 <i class="fa fa fa-eye"></i>View</a>
