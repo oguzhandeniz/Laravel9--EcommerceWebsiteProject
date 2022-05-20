@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
+use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Product;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -21,6 +24,15 @@ class HomeController extends Controller
                                 ->get();
      Random veri çekmek için kullanılır:
       User::all()->random(10);
+
+     $productlist2 = Product::limit(4)->get();
+
+$orders = DB::table('orders')
+                ->select('department', DB::raw('SUM(price) as total_sales'))
+                ->groupBy('department')
+                ->havingRaw('SUM(price) > ?', [2500])
+                ->get();
+
      */
 
     public function index()
@@ -28,12 +40,14 @@ class HomeController extends Controller
         $page = 'home';
         $sliderdata = Product::inRandomOrder()->limit(3)->get();
         $productlist1 = Product::inRandomOrder()->limit(6)->get();
+        $productlist2 = Product::limit(4)->get();
         $setting = Setting::first();
         return view('home.index', [
             'page' => $page,
             'setting' => $setting,
             'sliderdata' => $sliderdata,
-            'productlist1' => $productlist1
+            'productlist1' => $productlist1,
+            'productlist2' => $productlist2
         ]);
     }
 
@@ -53,6 +67,17 @@ class HomeController extends Controller
         ]);
     }
 
+    public function faq()
+    {
+
+        $setting = Setting::first();
+        $datalist = Faq::all();
+        return view('home.faq', [
+            'datalist' => $datalist,
+            'setting' => $setting
+        ]);
+    }
+
     public function references()
     {
         $setting = Setting::first();
@@ -63,7 +88,7 @@ class HomeController extends Controller
 
     public function storemessage(Request $request)
     {
-      //  dd($request);
+        //  dd($request);
 
         $data = new Message();
         $data->name = $request->input('name');
@@ -77,15 +102,31 @@ class HomeController extends Controller
         return redirect()->route('contact')->with('info', 'Your message has been sent, Thank You.');
     }
 
+    public function storecomment(Request $request)
+    {
+        $data = new Comment();
+        $data->user_id = Auth::id();
+        $data->product_id = $request->input('product_id');
+        $data->subject = $request->input('subject');
+        $data->review = $request->input('review');
+        $data->rate = $request->input('rate');
+        $data->ip = request()->ip();
+        $data->save();
+        return redirect()->route('product', ['id' => $request->input('product_id')])->with('info', 'Your comment has been sent, Thank You.');
+    }
+
     public function product($id)
     {
         $data = Product::find($id);
         $images = DB::table('images')->where('product_id', $id)->get();
+        $reviews=Comment::where('product_id',$id)->where('status','True')->get();
         return view('home.product', [
             'data' => $data,
-            'images' => $images
+            'images' => $images,
+            'reviews' => $reviews
         ]);
     }
+
 
     public function categoryproducts($id)
     {

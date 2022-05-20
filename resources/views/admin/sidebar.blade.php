@@ -160,7 +160,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="sitemap.html" class="dropdown-toggle no-arrow">
+                    <a href="{{route('admin.comment.index')}}" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-star"></span><span class="mtext">COMMENTS</span>
                     </a>
                 </li>
@@ -170,7 +170,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="sitemap.html" class="dropdown-toggle no-arrow">
+                    <a href="{{route('admin.faq.index')}}" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-question"></span><span class="mtext">FAQ</span>
                     </a>
                 </li>

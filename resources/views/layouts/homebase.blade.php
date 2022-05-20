@@ -20,7 +20,10 @@
     <link href="{{asset("assets")}}/css/animate.css" rel="stylesheet">
     <link href="{{asset("assets")}}/css/main.css" rel="stylesheet">
     <link href="{{asset("assets")}}/css/responsive.css" rel="stylesheet">
-<!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="{{asset("assets")}}/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--[if lt IE 9]>
     <script src="{{asset("assets")}}/js/html5shiv.js"></script>
     <script src="{{asset("assets")}}/js/respond.min.js"></script>
     <![endif]-->

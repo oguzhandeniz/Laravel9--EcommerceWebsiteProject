@@ -98,6 +98,19 @@
                                                  alt=""/>
                                             <h2>${{$rs->price}}</h2>
                                             <p>{{$rs->title}}</p>
+                                            <div>
+                                                @php
+                                                    $average=$rs->comment->average('rate')
+                                                @endphp
+                                                <div class="side">
+                                                    <i class="fa fa-star  @if ($average<1)  fa fa-star-o @endif"></i>
+                                                    <i class="fa fa-star  @if ($average<2)  fa fa-star-o @endif"></i>
+                                                    <i class="fa fa-star  @if ($average<3)  fa fa-star-o @endif"></i>
+                                                    <i class="fa fa-star  @if ($average<4)  fa fa-star-o @endif"></i>
+                                                    <i class="fa fa-star  @if ($average<5)  fa fa-star-o @endif"></i>
+                                                    ({{$rs->comment->count('id')}})
+                                                </div>
+                                            </div>
                                             <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default add-to-cart">
                                                 <i class="fa fa fa-eye"></i>View</a>
                                         </div>
@@ -124,316 +137,58 @@
                     </div>
                     <!--features_items-->
 
-                    <div class="category-tab"><!--category-tab-->
+                    <div class="category-tab"><!--mostliked-tab-->
+                        <!--NOTE : MOST LİKE TABLOSUNDA TAB KISMI YAPILMADI KONTROL ET.-->
+                        @php
+                            $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
+                        @endphp
                         <h2 class="title text-center">MOST LIKED</h2>
                         <div class="col-sm-12">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#tshirt" data-toggle="tab">CARS</a></li>
-                                <li><a href="#blazers" data-toggle="tab">ELECTRONIC</a></li>
-                                <li><a href="#sunglass" data-toggle="tab">REAL ESTATE</a></li>
-                                <li><a href="#kids" data-toggle="tab">FASHION</a></li>
-                                <li><a href="#poloshirt" data-toggle="tab">CLOTHES</a></li>
-                                <li><a href="#poloshirt" data-toggle="tab">FURNITURE</a></li>
-
+                                @foreach($mainCategories as $rs)
+                                <li><a href="#{{$rs->id}}" data-toggle="tab">{{$rs->title}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="tab-content">
-                            <div class="tab-pane fade active in" id="tshirt">
+                            <div class="tab-pane fade active in" id="{{$rs->id}}">
+
+                                @foreach($productlist2 as $rs)
+                                    @php
+                                        $ort=$rs->comment->average('rate')
+                                    @endphp
                                 <div class="col-sm-3">
+                                    @if($ort > 2)
                                     <div class="product-image-wrapper">
                                         <div class="single-products">
                                             <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery1.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
+                                                <img src="{{Storage::url($rs->image)}}" style="width:183px; height:160px;" alt=""/>
+                                                <h2>${{$rs->price}}</h2>
+                                                <p>{{$rs->title}}</p>
+                                                <div>
+                                                    @php
+                                                        $average=$rs->comment->average('rate')
+                                                    @endphp
+                                                    <div class="side">
+                                                        <i class="fa fa-star  @if ($average<1)  fa fa-star-o @endif"></i>
+                                                        <i class="fa fa-star  @if ($average<2)  fa fa-star-o @endif"></i>
+                                                        <i class="fa fa-star  @if ($average<3)  fa fa-star-o @endif"></i>
+                                                        <i class="fa fa-star  @if ($average<4)  fa fa-star-o @endif"></i>
+                                                        <i class="fa fa-star  @if ($average<5)  fa fa-star-o @endif"></i>
+                                                        ({{$rs->comment->count('id')}})
+                                                    </div>
+                                                </div>
+                                                <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default add-to-cart">
+                                                    <i class="fa fa fa-eye"></i>View</a>
                                             </div>
-
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery2.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery3.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery4.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="blazers">
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery4.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery3.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery2.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery1.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="sunglass">
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery3.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery4.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery1.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery2.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="kids">
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery1.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery2.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery3.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery4.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="poloshirt">
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery2.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery4.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery3.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{asset("assets")}}/images/home/gallery1.jpg" alt=""/>
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="product-details.html" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa fa-eye"></i>View</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
-                    </div><!--/category-tab-->
+                    </div><!--/most-liked-tab-->
 
                     <div class="recommended_items"><!--recommended_items-->
                         <h2 class="title text-center">LAST ADDED PRODUCTS</h2>
