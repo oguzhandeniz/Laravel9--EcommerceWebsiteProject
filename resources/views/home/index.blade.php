@@ -159,7 +159,7 @@
                                         $ort=$rs->comment->average('rate')
                                     @endphp
                                     <div class="col-sm-3">
-                                        @if($ort > 3)
+                                        @if($ort > 1)
                                             <div class="product-image-wrapper">
                                                 <div class="single-products">
                                                     <div class="productinfo text-center">

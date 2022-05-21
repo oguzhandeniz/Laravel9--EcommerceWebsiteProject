@@ -123,7 +123,7 @@
                     </a>
                     <ul class="submenu">
                         <li><a href="form-basic.html">New Users</a></li>
-                        <li><a href="advanced-components.html">User List</a></li>
+                        <li><a href="{{route('admin.user.index')}}">User List</a></li>
                         <li><a href="form-wizard.html">User Profile</a></li>
                     </ul>
                 </li>
