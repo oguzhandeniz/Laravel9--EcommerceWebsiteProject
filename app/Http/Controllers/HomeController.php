@@ -27,7 +27,7 @@ class HomeController extends Controller
 
      $productlist2 = Product::limit(4)->get();
 
-$orders = DB::table('orders')
+    $orders = DB::table('orders')
                 ->select('department', DB::raw('SUM(price) as total_sales'))
                 ->groupBy('department')
                 ->havingRaw('SUM(price) > ?', [2500])
@@ -119,7 +119,7 @@ $orders = DB::table('orders')
     {
         $data = Product::find($id);
         $images = DB::table('images')->where('product_id', $id)->get();
-        $reviews=Comment::where('product_id',$id)->where('status','True')->get();
+        $reviews = Comment::where('product_id', $id)->where('status', 'True')->get();
         return view('home.product', [
             'data' => $data,
             'images' => $images,
@@ -141,6 +141,32 @@ $orders = DB::table('orders')
     public static function maincategorylist()
     {
         return Category::where('parent_id', '=', 0)->with('children')->get();
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('home');
+    }
+
+    public function loginadmincheck(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/admin');
+        }
+
+        return back()->withErrors([
+            'error' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
     }
 
 }

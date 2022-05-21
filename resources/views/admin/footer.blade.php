@@ -58,16 +58,5 @@
 <script src="{{asset("assets/adminAssets")}}/vendors/chart.js/chart.js"></script>
 
 
-
-
-
-
-
-
-
-
-
-
-
 </body>
 @yield('foot')

@@ -1,7 +1,6 @@
 @extends('layouts.homebase')
 
 
-
 @section('title',$setting->title)
 @section('description',$setting->description)
 @section('keywords',$setting->keywords)
@@ -31,25 +30,25 @@
                         <div class="panel-group category-products" id="accordian">
                             <!--category-productsr-->
                             @foreach($mainCategories as $rs)
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordian" href="#{{$rs->title}}">
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            {{$rs->title}}
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="{{$rs->title}}" class="panel-collapse collapse">
-                                    <div class="panel-body">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordian" href="#{{$rs->title}}">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                {{$rs->title}}
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="{{$rs->title}}" class="panel-collapse collapse">
+                                        <div class="panel-body">
 
                                             @if(count($rs->children))
                                                 @include('home.categorytree',['children'=>$rs->children])
                                             @endif
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             @endforeach
                         </div><!--/category-products-->
 
@@ -84,8 +83,9 @@
                     </div>
                 </div>
 
+
                 <div class="col-sm-9 padding-right">
-                    <!--features_items-->
+                    <!--SHOWCASE-->
                     <div class="features_items">
                         <h2 class="title text-center">SHOWCASE</h2>
 
@@ -111,7 +111,8 @@
                                                     ({{$rs->comment->count('id')}})
                                                 </div>
                                             </div>
-                                            <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default add-to-cart">
+                                            <a href="{{route('product',['id'=>$rs->id])}}"
+                                               class="btn btn-default add-to-cart">
                                                 <i class="fa fa fa-eye"></i>View</a>
                                         </div>
                                         <!--
@@ -135,7 +136,7 @@
                         @endforeach
 
                     </div>
-                    <!--features_items-->
+
 
                     <div class="category-tab"><!--mostliked-tab-->
                         <!--NOTE : MOST LİKE TABLOSUNDA TAB KISMI YAPILMADI KONTROL ET.-->
@@ -146,7 +147,7 @@
                         <div class="col-sm-12">
                             <ul class="nav nav-tabs">
                                 @foreach($mainCategories as $rs)
-                                <li><a href="#{{$rs->id}}" data-toggle="tab">{{$rs->title}}</a></li>
+                                    <li><a href="#{{$rs->id}}" data-toggle="tab">{{$rs->title}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -157,38 +158,41 @@
                                     @php
                                         $ort=$rs->comment->average('rate')
                                     @endphp
-                                <div class="col-sm-3">
-                                    @if($ort > 2)
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{Storage::url($rs->image)}}" style="width:183px; height:160px;" alt=""/>
-                                                <h2>${{$rs->price}}</h2>
-                                                <p>{{$rs->title}}</p>
-                                                <div>
-                                                    @php
-                                                        $average=$rs->comment->average('rate')
-                                                    @endphp
-                                                    <div class="side">
-                                                        <i class="fa fa-star  @if ($average<1)  fa fa-star-o @endif"></i>
-                                                        <i class="fa fa-star  @if ($average<2)  fa fa-star-o @endif"></i>
-                                                        <i class="fa fa-star  @if ($average<3)  fa fa-star-o @endif"></i>
-                                                        <i class="fa fa-star  @if ($average<4)  fa fa-star-o @endif"></i>
-                                                        <i class="fa fa-star  @if ($average<5)  fa fa-star-o @endif"></i>
-                                                        ({{$rs->comment->count('id')}})
+                                    <div class="col-sm-3">
+                                        @if($ort > 3)
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        <img src="{{Storage::url($rs->image)}}"
+                                                             style="width:183px; height:160px;" alt=""/>
+                                                        <h2>${{$rs->price}}</h2>
+                                                        <p>{{$rs->title}}</p>
+                                                        <div>
+                                                            @php
+                                                                $average=$rs->comment->average('rate')
+                                                            @endphp
+                                                            <div class="side">
+                                                                <i class="fa fa-star  @if ($average<1)  fa fa-star-o @endif"></i>
+                                                                <i class="fa fa-star  @if ($average<2)  fa fa-star-o @endif"></i>
+                                                                <i class="fa fa-star  @if ($average<3)  fa fa-star-o @endif"></i>
+                                                                <i class="fa fa-star  @if ($average<4)  fa fa-star-o @endif"></i>
+                                                                <i class="fa fa-star  @if ($average<5)  fa fa-star-o @endif"></i>
+                                                                ({{$rs->comment->count('id')}})
+                                                            </div>
+                                                        </div>
+                                                        <a href="{{route('product',['id'=>$rs->id])}}"
+                                                           class="btn btn-default add-to-cart">
+                                                            <i class="fa fa fa-eye"></i>View</a>
                                                     </div>
                                                 </div>
-                                                <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default add-to-cart">
-                                                    <i class="fa fa fa-eye"></i>View</a>
                                             </div>
-                                        </div>
+                                        @endif
                                     </div>
-                                    @endif
-                                </div>
                                 @endforeach
                             </div>
                         </div>
                     </div><!--/most-liked-tab-->
+
 
                     <div class="recommended_items"><!--recommended_items-->
                         <h2 class="title text-center">LAST ADDED PRODUCTS</h2>

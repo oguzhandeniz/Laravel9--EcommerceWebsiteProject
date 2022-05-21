@@ -74,6 +74,7 @@
                                        aria-selected="false">References</a>
                                 </li>
                             </ul>
+
                             <div class="tab-content">
                                 <div class="tab-pane fade active show" id="general" role="tabpanel">
                                     <div class="pd-20">
