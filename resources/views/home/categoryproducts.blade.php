@@ -1,7 +1,11 @@
 @extends('layouts.homebase')
 
-@section('title',$category->title . ' Products')
 
+@section('title',$category->title)
+@section('description',$category->description)
+@section('keywords',$category->keywords)
+@section('author',$category->title)
+@section('icon',\Illuminate\Support\Facades\Storage::url($category->icon))
 
 
 @section('sidebar')
@@ -172,34 +176,36 @@
                     <div class="features_items">
                         <h2 class="title text-center">{{$category->title}}</h2>
                         @foreach($products as $rs)
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="{{Storage::url($rs->image)}}" style="width:268px; height:360px;" alt="">
-                                        <h2>{{$rs->price}}</h2>
-                                        <p>{{$rs->title}}</p>
-                                        <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default add-to-cart">
-                                            <i class="fa fa fa-eye"></i>View</a>
-                                    </div>
-                                    <!--
-                                    <div class="product-overlay">
-                                        <div class="overlay-content">
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                            <div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="{{Storage::url($rs->image)}}" style="width:268px; height:360px;"
+                                                 alt=""/>
+                                            <h2>${{$rs->price}}</h2>
+                                            <p>{{$rs->title}}</p>
+                                            <a href="{{route('product',['id'=>$rs->id])}}"
+                                               class="btn btn-default add-to-cart">
+                                                <i class="fa fa fa-eye"></i>View</a>
                                         </div>
+                                        <!--
+                                        <div class="product-overlay">
+                                            <div class="overlay-content">
+                                                <h2>$56</h2>
+                                                <p>Easy Polo Black Edition</p>
+                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            </div>
+                                        </div>
+                                        -->
                                     </div>
-                                    -->
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to Favorites</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Compare</a></li>
-                                    </ul>
+                                    <div class="choose">
+                                        <ul class="nav nav-pills nav-justified">
+                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to Favorites</a></li>
+                                            <li><a href="#"><i class="fa fa-plus-square"></i>Compare</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
 
 

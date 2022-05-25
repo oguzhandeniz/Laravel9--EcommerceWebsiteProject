@@ -74,6 +74,7 @@
 
                     </div>
                 </div>
+
                 <div class="col-sm-9 padding-right">
 
                     <div class="product-details"><!--product-details-->
@@ -87,13 +88,11 @@
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner border">
                                     <div class="item active">
-                                        <a href=""><img src="{{Storage::url($data->image)}}"
-                                                        style="width:402px; height:402px;" alt="Image"></a>
+                                        <a href=""><img src="{{Storage::url($data->image)}}" style="width:402px; height:402px;" alt="Image"></a>
                                     </div>
                                     @foreach($images as $rs)
                                         <div class="item">
-                                            <a href=""><img src="{{Storage::url($rs->image)}}"
-                                                            style="width:402px; height:402px;" alt="Image"></a>
+                                            <a href=""><img src="{{Storage::url($rs->image)}}" style="width:402px; height:402px;" alt="Image"></a>
                                         </div>
                                     @endforeach
                                 </div>
@@ -120,7 +119,7 @@
                                 @endforeach
                                 </div>
                             </div>
--->
+                                -->
 
                                 <!-- Controls -->
                                 <a class="left item-control" href="#similar-product" data-slide="prev">
