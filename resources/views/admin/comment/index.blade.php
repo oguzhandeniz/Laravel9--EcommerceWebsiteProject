@@ -67,7 +67,7 @@
                                 <td>{{$rs->review}}</td>
                                 <td>{{$rs->rate}}</td>
                                 <td>{{$rs->status}}</td>
-                                <td><a href="{{route('admin.comment.show', ['id'=>$rs->id])}}" class="btn btn-success btn-sm">Show</a></td>
+                                <td><a href="{{route('admin.comment.show', ['id'=>$rs->id])}}"  onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')" class="btn btn-success btn-sm">Show</a></td>
                                 <td><a href="{{route('admin.comment.destroy', ['id'=>$rs->id])}}" class="btn btn-danger btn-sm" onclick="return confirm('Deleting! Are you sure?')">Delete</a></td>
                             </tr>
                         @endforeach

@@ -1,4 +1,4 @@
-@extends('layouts.adminbase')
+@extends('layouts.adminwindow')
 
 
 @section('title','Show Message '.$data->title)

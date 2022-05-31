@@ -66,7 +66,7 @@
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
                             @auth()
-                                <li><a href="/dashboard"><i class="fa fa-user"></i>{{Auth::user()->name}}</a></li>
+                                <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user"></i>{{Auth::user()->name}}</a></li>
                                 <li><a href="/logoutuser"><i class="fa fa-lock"></i>Logout</a></li>
                             @endauth
                             @guest()

@@ -33,6 +33,11 @@ class HomeController extends Controller
                 ->havingRaw('SUM(price) > ?', [2500])
                 ->get();
 
+
+    $users = DB::table('users')
+                ->groupBy('account_id')
+                ->having('account_id', '>', 100)
+                ->get();
      */
 
     public function index()

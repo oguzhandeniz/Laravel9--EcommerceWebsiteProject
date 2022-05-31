@@ -75,6 +75,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
     </div><!--/#contact-page-->
 @endsection

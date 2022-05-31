@@ -184,8 +184,7 @@
                                                  alt=""/>
                                             <h2>${{$rs->price}}</h2>
                                             <p>{{$rs->title}}</p>
-                                            <a href="{{route('product',['id'=>$rs->id])}}"
-                                               class="btn btn-default add-to-cart">
+                                            <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default add-to-cart">
                                                 <i class="fa fa fa-eye"></i>View</a>
                                         </div>
                                         <!--

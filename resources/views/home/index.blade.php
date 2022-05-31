@@ -153,13 +153,12 @@
                         </div>
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="{{$rs->id}}">
-
                                 @foreach($productlist2 as $rs)
                                     @php
                                         $ort=$rs->comment->average('rate')
                                     @endphp
-                                    <div class="col-sm-3">
-                                        @if($ort > 1)
+                                    @if($ort > 3)
+                                        <div class="col-sm-3">
                                             <div class="product-image-wrapper">
                                                 <div class="single-products">
                                                     <div class="productinfo text-center">
@@ -181,13 +180,13 @@
                                                             </div>
                                                         </div>
                                                         <a href="{{route('product',['id'=>$rs->id])}}"
-                                                           class="btn btn-default add-to-cart">
-                                                            <i class="fa fa fa-eye"></i>View</a>
+                                                           class="btn btn-default add-to-cart"><i
+                                                                class="fa fa fa-eye"></i>View</a>
                                                     </div>
                                                 </div>
                                             </div>
-                                        @endif
-                                    </div>
+                                        </div>
+                                    @endif
                                 @endforeach
                             </div>
                         </div>

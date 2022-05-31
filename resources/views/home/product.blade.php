@@ -154,7 +154,7 @@
                                 <span>
 									<span>{{$data->price}}$</span>
 									<label>Quantity:</label>
-									<input type="text" value="">
+									<input type="text" value="0">
 									<button type="button" class="btn btn-fefault cart">
 										<i class="fa fa-shopping-cart"></i>
 										Add to cart
@@ -369,7 +369,6 @@
                     <div class="recommended_items"><!--recommended_items-->
 
                         <h2 class="title text-center">LAST ADDED PRODUCTS</h2>
-
                         <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="item active">
