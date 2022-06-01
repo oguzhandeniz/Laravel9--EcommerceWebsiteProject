@@ -175,6 +175,7 @@
                     <!--features_items-->
                     <div class="features_items">
                         <h2 class="title text-center">{{$category->title}}</h2>
+                        @include('home.messages')
                         @foreach($products as $rs)
                             <div class="col-sm-4">
                                 <div class="product-image-wrapper">
@@ -184,8 +185,14 @@
                                                  alt=""/>
                                             <h2>${{$rs->price}}</h2>
                                             <p>{{$rs->title}}</p>
-                                            <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default add-to-cart">
-                                                <i class="fa fa fa-eye"></i>View</a>
+
+                                            <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
+
+                                            <form action="{{route('user.shopcart.store',['id'=>$rs->id])}}" method="post">
+                                                @csrf
+                                                <input  name ="quantity" type="hidden" value="1">
+                                                <button type="submit" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                                            </form>
                                         </div>
                                         <!--
                                         <div class="product-overlay">

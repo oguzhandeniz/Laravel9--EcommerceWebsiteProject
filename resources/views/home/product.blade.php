@@ -153,18 +153,17 @@
                                 </div>
                                 <span>
 									<span>{{$data->price}}$</span>
-									<label>Quantity:</label>
-									<input type="text" value="0">
-									<button type="button" class="btn btn-fefault cart">
-										<i class="fa fa-shopping-cart"></i>
-										Add to cart
-									</button>
+                                    <form action="{{route('user.shopcart.store',['id'=>$data->id])}}" method="post">
+                                        @csrf
+                                        <label>Quantity:</label>
+									<input class="input" name = "quantity" type="number" value="1" max="{{$data->quantity}}">
+									<button type="submit" class="btn btn-fefault cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                    </form>
 								</span>
                                 <p><b>Availability:</b> In Stock({{$data->quantity}})</p>
                                 <p><b>Condition:</b> New</p>
                                 <p><b>Brand:</b> {{$data->title}}</p>
-                                <a href=""><img src="{{asset("assets")}}/images/product-details/share.png"
-                                                class="share img-responsive" alt=""></a>
+                                <a href=""><img src="{{asset("assets")}}/images/product-details/share.png" class="share img-responsive" alt=""></a>
                             </div>
                             <!--/product-information-->
                         </div>
@@ -192,9 +191,7 @@
                                                 <img src="{{asset("assets")}}/images/home/gallery1.jpg" alt="">
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa-shopping-cart"></i>Add to cart
-                                                </button>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
                                     </div>

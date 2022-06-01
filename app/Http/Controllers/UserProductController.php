@@ -1,26 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\AdminPanel;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
-class AdminProductController extends Controller
+class UserProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-        $data=Product::all();
-        return view('admin.product.index',[
+        $data=Product::where('user_id',Auth::id())->get();
+        return view('home.user.product',[
             'data'=>$data
         ]);
     }
@@ -33,7 +31,7 @@ class AdminProductController extends Controller
     public function create()
     {
         $data=Category::all();
-        return view('admin.product.create',[
+        return view('home.user.product_create',[
             'data'=>$data
         ]);
 
@@ -42,11 +40,12 @@ class AdminProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+
         $data=new Product();
         $data->category_id=$request->category_id;
         $data->user_id=Auth::id();
@@ -63,20 +62,20 @@ class AdminProductController extends Controller
             $data->image=$request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/product');
+        return redirect('user/product');
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param \App\Models\Product $product
      * @return \Illuminate\Http\Response
      */
     public function show(Product $product,$id)
     {
         $data=Product::find($id);
-        return view('admin.product.show',[
+        return view('home.user.product_show',[
             'data'=>$data
         ]);
     }
@@ -84,14 +83,14 @@ class AdminProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param \App\Models\Product $product
      * @return \Illuminate\Http\Response
      */
     public function edit(Product $product,$id)
     {
         $data=Product::find($id);
         $datalist=Category::all();
-        return view('admin.product.edit',[
+        return view('home.user.product_edit',[
             'data'=>$data,'datalist'=>$datalist
         ]);
     }
@@ -99,8 +98,8 @@ class AdminProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Product $product
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Product $product,$id)
@@ -121,7 +120,7 @@ class AdminProductController extends Controller
             $data->image=$request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/product');
+        return redirect('user/product');
     }
 
     /**
@@ -137,6 +136,6 @@ class AdminProductController extends Controller
             Storage::delete($data->image);
         }
         $data->delete();
-        return redirect('admin/product');
+        return redirect('user/product');
     }
 }

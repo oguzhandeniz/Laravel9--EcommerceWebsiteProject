@@ -73,9 +73,9 @@
                                     <li><a href="/loginuser"><i class="fa fa-lock"></i> Login</a></li>
                                     <li><a href="/registeruser"><i class="fa fa-user"></i>Register</a></li>
                             @endguest
-                            <li><a href="#"><i class="fa fa-star"></i>Favorites</a></li>
+                            <li><a href="{{route('userpanel.reviews')}}"><i class="fa fa-star"></i>Comments</a></li>
                             <li><a href="checkout.html"><i class="fa fa-crosshairs"></i>Check</a></li>
-                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Cart</a></li>
+                            <li><a href="{{route('user.shopcart.index')}}"><i class="fa fa-shopping-cart"></i>Cart</a></li>
 
                         </ul>
                     </div>
@@ -120,8 +120,12 @@
 
                         </ul>
                     </div>
+
+
                 </div>
+
                 <div class="col-sm-3">
+
                     <div class="search_box pull-right">
                         <input type="text" placeholder="Search"/>
                     </div>

@@ -9,7 +9,9 @@ use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShopcartController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -71,7 +73,32 @@ Route::middleware('auth')->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/reviews', 'reviews')->name('reviews');
         Route::get('/reviewdestroy/{id}', 'reviewdestroy')->name('reviewdestroy');
+    });
 
+    //**************** USER PRODUCT ROUTES******************
+    Route::middleware('auth')->prefix('user')->name('user.')->group(function (){
+        Route::prefix('/product')->name('product.')->controller(UserProductController::class)->group(function (){
+            Route::get('/','index')->name('index');
+            Route::get('/create','create')->name('create');
+            Route::post('/store','store')->name('store');
+            Route::get('/edit/{id}','edit')->name('edit');
+            Route::post('/update/{id}','update')->name('update');
+            Route::get('/destroy/{id}','destroy')->name('destroy');
+            Route::get('/show/{id}','show')->name('show');
+        });
+        //**************** USER PRODUCT IMAGE ROUTES******************
+        Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function (){
+            Route::get('/{pid}','index')->name('index');
+            Route::post('/store/{pid}','store')->name('store');
+            Route::get('/destroy/{pid}/{id}','destroy')->name('destroy');
+        });
+        //**************** USER PRODUCT SHOPCART ROUTES******************
+        Route::prefix('/shopcart')->name('shopcart.')->controller(ShopcartController::class)->group(function (){
+            Route::get('/','index')->name('index');
+            Route::post('/store/{id}','store')->name('store');
+            Route::post('/update/{id}','update')->name('update');
+            Route::get('/destroy/{id}','destroy')->name('destroy');
+        });
 
     });
 

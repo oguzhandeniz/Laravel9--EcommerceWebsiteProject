@@ -17,4 +17,8 @@ class Product extends Model
     {
         return $this->hasMany(Comment::class);
     }
+    public function shopcart()
+    {
+        return $this->hasMany(Shopcart::class);
+    }
 }

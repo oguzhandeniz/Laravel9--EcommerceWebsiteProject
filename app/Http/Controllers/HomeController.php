@@ -38,6 +38,8 @@ class HomeController extends Controller
                 ->groupBy('account_id')
                 ->having('account_id', '>', 100)
                 ->get();
+
+    Product::orderByDesc('created_at)->skip(0)->take($limit)->get();
      */
 
     public function index()

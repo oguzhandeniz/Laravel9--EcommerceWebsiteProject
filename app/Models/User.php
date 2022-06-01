@@ -63,6 +63,10 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
+    public function shopcart()
+    {
+        return $this->hasMany(Shopcart::class);
+    }
     public function roles()
     {
         return $this->belongsToMany(Role::class,'role_users');
