@@ -6,7 +6,7 @@
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
                             <li><a href="#"><i class="fa fa-phone"></i> +90 538 297 1885</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@oguzhandeniz.com</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i>info@oguzhandeniz.com</a></li>
                         </ul>
                     </div>
                 </div>
