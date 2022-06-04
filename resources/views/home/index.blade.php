@@ -142,7 +142,6 @@
 
                     </div>
 
-
                     <div class="category-tab"><!--mostliked-tab-->
                         <!--NOTE : MOST LİKE TABLOSUNDA TAB KISMI YAPILMADI KONTROL ET.-->
                         @php
@@ -158,17 +157,16 @@
                         </div>
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="{{$rs->id}}">
-                                @foreach($productlist2 as $rs)
+                                @foreach($mostlike1 as $rs)
                                     @php
                                         $ort=$rs->comment->average('rate')
                                     @endphp
-                                    @if($ort > 3)
+                                    @if($ort >= 3)
                                         <div class="col-sm-3">
                                             <div class="product-image-wrapper">
                                                 <div class="single-products">
                                                     <div class="productinfo text-center">
-                                                        <img src="{{Storage::url($rs->image)}}"
-                                                             style="width:183px; height:160px;" alt=""/>
+                                                        <img src="{{Storage::url($rs->image)}}" style="width:183px; height:160px;" alt=""/>
                                                         <h2>${{$rs->price}}</h2>
                                                         <p>{{$rs->title}}</p>
                                                         <div>
@@ -184,9 +182,7 @@
                                                                 ({{$rs->comment->count('id')}})
                                                             </div>
                                                         </div>
-                                                        <a href="{{route('product',['id'=>$rs->id])}}"
-                                                           class="btn btn-default add-to-cart"><i
-                                                                class="fa fa fa-eye"></i>View</a>
+                                                        <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -197,99 +193,86 @@
                         </div>
                     </div><!--/most-liked-tab-->
 
-
                     <div class="recommended_items"><!--recommended_items-->
                         <h2 class="title text-center">LAST ADDED PRODUCTS</h2>
 
                         <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="{{asset("assets")}}/images/home/recommend1.jpg" alt=""/>
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="product-details.html"
-                                                       class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
-                                                </div>
+                                    @foreach($lastadded1 as $rs)
+                                        <div class="col-sm-4">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        <img src="{{Storage::url($rs->image)}}" class="girl img-responsive"
+                                                             style="width:183px; height:160px;"/>
+                                                        <h2>${{$rs->price}}</h2>
+                                                        <p>{{$rs->title}} </p>
+                                                        <div>
+                                                            @php
+                                                                $average=$rs->comment->average('rate')
+                                                            @endphp
+                                                            <div class="side">
+                                                                <i class="fa fa-star  @if ($average<1)  fa fa-star-o @endif"></i>
+                                                                <i class="fa fa-star  @if ($average<2)  fa fa-star-o @endif"></i>
+                                                                <i class="fa fa-star  @if ($average<3)  fa fa-star-o @endif"></i>
+                                                                <i class="fa fa-star  @if ($average<4)  fa fa-star-o @endif"></i>
+                                                                <i class="fa fa-star  @if ($average<5)  fa fa-star-o @endif"></i>
+                                                                ({{$rs->comment->count('id')}})
+                                                            </div>
+                                                        </div>
+                                                        <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
 
+                                                        <form action="{{route('user.shopcart.store',['id'=>$rs->id])}}" method="post">
+                                                            @csrf
+                                                            <input  name ="quantity" type="hidden" value="1">
+                                                            <button type="submit" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="{{asset("assets")}}/images/home/recommend2.jpg" alt=""/>
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="product-details.html"
-                                                       class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="{{asset("assets")}}/images/home/recommend3.jpg" alt=""/>
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="product-details.html"
-                                                       class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
-                                <div class="item">
+                                <div class="item ">
+                                    @foreach($lastadded2 as $rs)
                                     <div class="col-sm-4">
                                         <div class="product-image-wrapper">
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
-                                                    <img src="{{asset("assets")}}/images/home/recommend1.jpg" alt=""/>
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="product-details.html"
-                                                       class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
+                                                    <img src="{{Storage::url($rs->image)}}" class="girl img-responsive"
+                                                         style="width:183px; height:160px;"/>
+                                                    <h2>${{$rs->price}}</h2>
+                                                    <p>{{$rs->title}} </p>
+                                                    <div>
+                                                        @php
+                                                            $average=$rs->comment->average('rate')
+                                                        @endphp
+                                                        <div class="side">
+                                                            <i class="fa fa-star  @if ($average<1)  fa fa-star-o @endif"></i>
+                                                            <i class="fa fa-star  @if ($average<2)  fa fa-star-o @endif"></i>
+                                                            <i class="fa fa-star  @if ($average<3)  fa fa-star-o @endif"></i>
+                                                            <i class="fa fa-star  @if ($average<4)  fa fa-star-o @endif"></i>
+                                                            <i class="fa fa-star  @if ($average<5)  fa fa-star-o @endif"></i>
+                                                            ({{$rs->comment->count('id')}})
+                                                        </div>
+                                                    </div>
+                                                    <a href="{{route('product',['id'=>$rs->id])}}" class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
+
+                                                    <form action="{{route('user.shopcart.store',['id'=>$rs->id])}}" method="post">
+                                                        @csrf
+                                                        <input  name ="quantity" type="hidden" value="1">
+                                                        <button type="submit" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                                                    </form>
+
                                                 </div>
 
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="{{asset("assets")}}/images/home/recommend2.jpg" alt=""/>
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="product-details.html"
-                                                       class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="{{asset("assets")}}/images/home/recommend3.jpg" alt=""/>
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="product-details.html"
-                                                       class="btn btn-default add-to-cart"><i class="fa fa fa-eye"></i>View</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <a class="left recommended-item-control" href="#recommended-item-carousel"

@@ -1,7 +1,7 @@
 @extends('layouts.homebase')
 
 
-@section('title' ,'User Shopcart')
+@section('title' ,'Order Items')
 
 @section('sidebar')
     @include('home.sidebar')
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="col-sm-10">
-                        <h2 class="title text-center">User Shopcart</h2>
+                        <h2 class="title text-center">Order Items</h2>
                         @include('home.messages')
                         <div class="table-responsive cart_info">
                             <table class="table table-condensed">
@@ -36,14 +36,12 @@
                                     <td class="price">Price</td>
                                     <td class="quantity">Quantity</td>
                                     <td class="total">Total</td>
-                                    <td class="delete">Delete</td>
+                                    <td class="total">Status</td>
+                                    <td class="total">Note</td>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @php
-                                    $total = 0;
-                                @endphp
-                                @foreach($data as $rs)
+                                @foreach($datalist as $rs)
                                     <tr>
                                         <td>
                                             @if($rs->product->image)
@@ -56,24 +54,11 @@
                                             <a href="{{route('product',['id' => $rs->product->id,'slug' =>$rs->product->slug])}}">{{$rs->product->title}}</a>
                                         </td>
                                         <td>{{$rs->product->price}}$</td>
-                                        <td>
-                                            <form action="{{route('user.shopcart.update',['id'=>$rs->id])}}"
-                                                  method="post">
-                                                @csrf
-                                                <input class="input" name="quantity" type="number"
-                                                       value="{{$rs->quantity}}" min="1"
-                                                       max="{{$rs->product->quantity}}" onchange="this.form.submit()">
-                                            </form>
-                                        </td>
-
-                                        <td>{{$rs->product->price * $rs->quantity}}$</td>
-                                        <td><a href="{{route('user.shopcart.destroy', ['id'=>$rs->id])}}"
-                                               class="btn btn-danger btn-sm"
-                                               onclick="return confirm('Deleting! Are you sure?')">Delete</a></td>
+                                        <td>{{$rs->quantity}}</td>
+                                        <td>{{$rs->amount}}$</td>
+                                        <td>{{$rs->status}}</td>
+                                        <td>{{$rs->note}}</td>
                                     </tr>
-                                    @php
-                                        $total += $rs->product->price * $rs->quantity;
-                                    @endphp
                                 @endforeach
                                 </tbody>
                             </table>
@@ -83,20 +68,11 @@
                     <div class="col-sm-10 pull-right">
                         <div class="total_area">
                             <ul>
-                                <li>Cart Sub Total <span>${{$total}}</span></li>
+                                <li>Cart Sub Total <span>${{$rs->order->total}}</span></li>
                                 <li>Eco Tax <span>$2</span></li>
                                 <li>Shipping Cost <span>Free</span></li>
-                                <li>Total <span>${{$total}}</span></li>
+                                <li>Total <span>${{$rs->order->total}}</span></li>
                             </ul>
-
-                            <form action="{{route('user.order.create')}}" method="post">
-                                @csrf
-                                <div class="pull-right">
-                                    <input type="hidden" name="total" value="{{$total}}">
-                                    <button type="submit" class="btn btn-default check_out">Check Out</button>
-                                </div>
-                            </form>
-
                         </div>
                     </div>
                 </div>

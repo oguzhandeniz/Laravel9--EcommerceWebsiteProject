@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminCategoryController;
+use App\Http\Controllers\AdminPanel\AdminOrderController;
 use App\Http\Controllers\AdminPanel\AdminProductController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\CommentController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShopcartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserProductController;
@@ -99,6 +101,16 @@ Route::middleware('auth')->group(function () {
             Route::post('/update/{id}','update')->name('update');
             Route::get('/destroy/{id}','destroy')->name('destroy');
         });
+        //**************** USER PRODUCT ORDER ROUTES******************
+        Route::prefix('/order')->name('order.')->controller(OrderController::class)->group(function (){
+            Route::get('/','index')->name('index');
+            Route::post('/create','create')->name('create');
+            Route::post('/store','store')->name('store');
+            Route::get('/edit/{id}','edit')->name('edit');
+            Route::post('/update/{id}','update')->name('update');
+            Route::get('/destroy/{id}','destroy')->name('destroy');
+            Route::get('/show/{id}','show')->name('show');
+        });
 
     });
 
@@ -179,6 +191,19 @@ Route::middleware('auth')->group(function () {
             Route::get('/destroy/{id}', 'destroy')->name('destroy');
             Route::post('/addrole/{id}', 'addrole')->name('addrole');
             Route::get('/destroyrole/{uid}/{rid}', 'destroyrole')->name('destroyrole');
+        });
+
+        //**************** ADMIN PRODUCT ORDER ROUTES******************
+        Route::prefix('/order')->name('order.')->controller(AdminOrderController::class)->group(function (){
+            Route::get('/','index')->name('index');
+            Route::get('/list/{status}','list')->name('list');
+            Route::post('/create','create')->name('create');
+            Route::post('/store','store')->name('store');
+            Route::get('/edit/{id}','edit')->name('edit');
+            Route::post('/update/{id}','update')->name('update');
+            Route::post('/itemupdate/{id}','itemupdate')->name('itemupdate');
+            Route::get('/destroy/{id}','destroy')->name('destroy');
+            Route::get('/show/{id}','show')->name('show');
         });
     });
 });

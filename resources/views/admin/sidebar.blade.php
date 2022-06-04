@@ -112,9 +112,9 @@
                         <span class="micon dw dw-user-12 "></span><span class="mtext">VENDORS</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="index.html">New Vendors</a></li>
-                        <li><a href="index2.html">Vendor List</a></li>
-                        <li><a href="index3.html">Vendor Profile</a></li>
+                        <li><a href="#">New Vendors</a></li>
+                        <li><a href="#">Vendor List</a></li>
+                        <li><a href="#">Vendor Profile</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -122,9 +122,9 @@
                         <span class="micon dw dw-user1 text-yellow "></span><span class="mtext">USERS</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="form-basic.html">New Users</a></li>
+                        <li><a href="#">New Users</a></li>
                         <li><a href="{{route('admin.user.index')}}">User List</a></li>
-                        <li><a href="form-wizard.html">User Profile</a></li>
+                        <li><a href="#">User Profile</a></li>
                     </ul>
                 </li>
                 <li>
@@ -153,10 +153,12 @@
                         <span class="micon dw dw-shopping-cart2"></span><span class="mtext">ORDERS</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="introduction.html">New Order</a></li>
-                        <li><a href="getting-started.html">Order History</a></li>
-                        <li><a href="color-settings.html">Order Detail</a></li>
-                        <li><a href="third-party-plugins.html">Invoice</a></li>
+                        <li><a href="{{route('admin.order.index')}}">All Orders</a></li>
+                        <li><a href="{{route('admin.order.list' , ['status'=>'new'])}}">New Orders</a></li>
+                        <li><a href="{{route('admin.order.list' , ['status'=>'accepted'])}}">Accepted Orders</a></li>
+                        <li><a href="{{route('admin.order.list' , ['status'=>'canceled'])}}">Canceled Orders</a></li>
+                        <li><a href="{{route('admin.order.list' , ['status'=>'shipping'])}}">Shipping Orders</a></li>
+                        <li><a href="{{route('admin.order.list' , ['status'=>'completed'])}}">Completed Orders</a></li>
                     </ul>
                 </li>
                 <li>

@@ -39,6 +39,8 @@ class HomeController extends Controller
                 ->having('account_id', '>', 100)
                 ->get();
 
+    Product::orderByDesc('created_at)->offset(0)->limit($limit)->get();
+
     Product::orderByDesc('created_at)->skip(0)->take($limit)->get();
      */
 
@@ -47,14 +49,18 @@ class HomeController extends Controller
         $page = 'home';
         $sliderdata = Product::inRandomOrder()->limit(3)->get();
         $productlist1 = Product::inRandomOrder()->limit(6)->get();
-        $productlist2 = Product::limit(4)->get();
+        $mostlike1 = Product::inRandomOrder()->take(4)->get();
+        $lastadded1 = Product::orderByDesc('created_at')->skip(0)->take(3)->get();
+        $lastadded2 = Product::orderByDesc('created_at')->skip(3)->take(3)->get();
         $setting = Setting::first();
         return view('home.index', [
             'page' => $page,
             'setting' => $setting,
             'sliderdata' => $sliderdata,
             'productlist1' => $productlist1,
-            'productlist2' => $productlist2
+            'mostlike1' => $mostlike1,
+            'lastadded1' => $lastadded1,
+            'lastadded2' => $lastadded2
         ]);
     }
 
