@@ -880,7 +880,7 @@
                     </div>
                 </div>
 
-                <!--Best Selling Products--> <!--SSD de Tablo var-->
+                <!--Best Selling Products-->
                 <div class="card-box mb-30">
 
                 </div>

@@ -30,7 +30,8 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="{{route('index')}}"><img src="{{asset("assets")}}/images/home/logo.png"  width="139" height="65" alt="" /></a>
+                        <a href="{{route('index')}}"><img src="{{asset("assets")}}/images/home/logo.png" width="139"
+                                                          height="65" alt=""/></a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
@@ -66,16 +67,17 @@
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
                             @auth()
-                                <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user"></i>{{Auth::user()->name}}</a></li>
+                                <li><a href="{{route('userpanel.index')}}"><i
+                                            class="fa fa-user"></i>{{Auth::user()->name}}</a></li>
                                 <li><a href="/logoutuser"><i class="fa fa-lock"></i>Logout</a></li>
                             @endauth
                             @guest()
-                                    <li><a href="/loginuser"><i class="fa fa-lock"></i> Login</a></li>
-                                    <li><a href="/registeruser"><i class="fa fa-user"></i>Register</a></li>
+                                <li><a href="/loginuser"><i class="fa fa-lock"></i> Login</a></li>
+                                <li><a href="/registeruser"><i class="fa fa-user"></i>Register</a></li>
                             @endguest
                             <li><a href="{{route('userpanel.reviews')}}"><i class="fa fa-star"></i>Comments</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i>Check</a></li>
-                            <li><a href="{{route('user.shopcart.index')}}"><i class="fa fa-shopping-cart"></i>Cart</a></li>
+                            <li><a href="{{route('user.shopcart.index')}}"><i class="fa fa-shopping-cart"></i>Cart</a>
+                            </li>
 
                         </ul>
                     </div>
@@ -89,7 +91,8 @@
             <div class="row">
                 <div class="col-sm-9">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -102,10 +105,21 @@
                             <li><a href="{{route('index')}}" class="active">Home</a></li>
 
                             <li class="dropdown">
-                                <a href="#">Services<i class="fa fa-angle-down"></i></a>
+                                <a href="#">User<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="blog.html">Blog List</a></li>
-                                    <li><a href="blog-single.html">Blog Description</a></li>
+                                    @auth()
+                                        <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user"></i>{{Auth::user()->name}}</a></li>
+                                    @endauth
+                                    @guest()
+                                        <li><a href="/loginuser"><i class="fa fa-lock"></i> Login</a></li>
+                                        <li><a href="/registeruser"><i class="fa fa-user"></i>Register</a></li>
+                                    @endguest
+                                        <li><a href="{{route('user.order.index')}}"><i class="fa fa-heart-o"></i> My Orders</a></li>
+                                        <li><a href="{{route('user.sales.index')}}"><i class="fa fa-money"></i> My Sales</a></li>
+                                        <li><a href="{{route('userpanel.reviews')}}"><i class="fa fa-exchange"></i> My Reviews</a></li>
+                                        <li><a href="{{route('user.product.index')}}"><i class="fa fa-unlock-alt"></i> My Products</a></li>
+                                    <li><a href="{{route('userpanel.reviews')}}"><i class="fa fa-star"></i>Comments</a></li>
+                                    <li><a href="{{route('user.shopcart.index')}}"><i class="fa fa-shopping-cart"></i>Cart</a></li>
                                 </ul>
                             </li>
 
