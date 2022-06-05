@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Image;
 use App\Models\Product;
+use App\Models\Shopcart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -98,7 +100,7 @@ class UserImageController extends Controller
     {
         $data=Image::find($id);
         if($data->image && Storage::disk('public')->exists($data->image)){
-            Storage::delete($data->img);
+            Storage::delete($data->image);
         }
         $data->delete();
         return redirect()->back();

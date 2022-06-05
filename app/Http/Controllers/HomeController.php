@@ -42,6 +42,10 @@ class HomeController extends Controller
     Product::orderByDesc('created_at)->offset(0)->limit($limit)->get();
 
     Product::orderByDesc('created_at)->skip(0)->take($limit)->get();
+
+    $user = DB::table('users')
+                ->latest()
+                ->first();
      */
 
     public function index()

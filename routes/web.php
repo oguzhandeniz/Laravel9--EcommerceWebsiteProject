@@ -13,7 +13,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShopcartController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserImageController;
 use App\Http\Controllers\UserProductController;
+use App\Http\Controllers\UserSalesController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -89,7 +91,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/show/{id}','show')->name('show');
         });
         //**************** USER PRODUCT IMAGE ROUTES******************
-        Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function (){
+        Route::prefix('/image')->name('image.')->controller(UserImageController::class)->group(function (){
             Route::get('/{pid}','index')->name('index');
             Route::post('/store/{pid}','store')->name('store');
             Route::get('/destroy/{pid}/{id}','destroy')->name('destroy');
@@ -103,6 +105,16 @@ Route::middleware('auth')->group(function () {
         });
         //**************** USER PRODUCT ORDER ROUTES******************
         Route::prefix('/order')->name('order.')->controller(OrderController::class)->group(function (){
+            Route::get('/','index')->name('index');
+            Route::post('/create','create')->name('create');
+            Route::post('/store','store')->name('store');
+            Route::get('/edit/{id}','edit')->name('edit');
+            Route::post('/update/{id}','update')->name('update');
+            Route::get('/destroy/{id}','destroy')->name('destroy');
+            Route::get('/show/{id}','show')->name('show');
+        });
+        //**************** USER PRODUCT SALES ROUTES******************
+        Route::prefix('/sales')->name('sales.')->controller(UserSalesController::class)->group(function (){
             Route::get('/','index')->name('index');
             Route::post('/create','create')->name('create');
             Route::post('/store','store')->name('store');
