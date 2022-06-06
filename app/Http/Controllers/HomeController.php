@@ -51,11 +51,11 @@ class HomeController extends Controller
     public function index()
     {
         $page = 'home';
-        $sliderdata = Product::inRandomOrder()->limit(3)->get();
-        $productlist1 = Product::inRandomOrder()->limit(6)->get();
-        $mostlike1 = Product::inRandomOrder()->take(4)->get();
-        $lastadded1 = Product::orderByDesc('created_at')->skip(0)->take(3)->get();
-        $lastadded2 = Product::orderByDesc('created_at')->skip(3)->take(3)->get();
+        $sliderdata = Product::inRandomOrder()->limit(3)->where('status', 'True')->get();
+        $productlist1 = Product::inRandomOrder()->limit(6)->where('status', 'True')->get();
+        $mostlike1 = Product::inRandomOrder()->take(4)->where('status', 'True')->get();
+        $lastadded1 = Product::orderByDesc('created_at')->skip(0)->take(3)->where('status', 'True')->get();
+        $lastadded2 = Product::orderByDesc('created_at')->skip(3)->take(3)->where('status', 'True')->get();
         $setting = Setting::first();
         return view('home.index', [
             'page' => $page,
@@ -148,7 +148,7 @@ class HomeController extends Controller
     public function categoryproducts($id)
     {
         $category = Category::find($id);
-        $products = DB::table('products')->where('category_id', $id)->get();
+        $products = DB::table('products')->where('category_id', $id)->where('status', 'True')->get();
         return view('home.categoryproducts', [
             'category' => $category,
             'products' => $products

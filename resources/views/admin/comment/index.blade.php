@@ -53,8 +53,9 @@
                             <th scope="col">Review</th>
                             <th scope="col">Rate</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Delete</th>
                             <th scope="col">Show</th>
+                            <th scope="col">Delete</th>
+
                         </tr>
                         </thead>
                         <tbody>

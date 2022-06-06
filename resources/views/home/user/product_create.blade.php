@@ -109,8 +109,7 @@
                                     <div class="col-sm-12 col-md-10">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" name="image">
-                                            <label class="custom-file-label" for="exampleInputFile">Choose İmage
-                                                File</label>
+                                            <label class="custom-file-label" for="exampleInputFile">Choose İmage File</label>
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +118,6 @@
                                     <label class="col-sm-12 col-md-2 col-form-label">Status</label>
                                     <div class="col-sm-12 col-md-10">
                                         <select class="form-control" name="status">
-                                            <option>True</option>
                                             <option>False</option>
                                         </select>
                                     </div>
